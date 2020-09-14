@@ -77,9 +77,9 @@
                                         <td class="author column-author" data-colname="Author"><%= project.postedDate %></td>
                                         <td class="author column-author" data-colname="Author"><%= project.budget %></td>
                                         <td>
-                                    <div ><a class="awesome" href="/users/<%= user._id %>/update">تعديل</a> 
-                                        <a class="awesome" href="/users/<%= user._id%>/show"target="_blank">عرض</a>
-                                        <a class="trash" href="/users/<%= user._id %>/delete?_method=DELETE" >حذف</a>
+                                    <div ><a class="awesome" href="/projects/<%= project._id %>/edit"">تعديل</a> 
+                                        <a class="awesome" href="/projects/<%= project._id%>/show"target="_blank">عرض</a>
+                                        <a class="trash" href="/projects/<%= project._id %>/delete?_method=DELETE" >حذف</a>
                                     </div>
                                 </td>
                             </tr>

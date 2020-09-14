@@ -126,7 +126,7 @@ let currentDate= year + "-" + month + "-" + date + " " + hours + ":" + minutes +
 
 
                 const first = new Project({
-                     userId: req.body.userId,
+                     userId: "5f563202d326f90fc208351e",
                      title: req.body.title,
                      postedDate: currentDate,
                      budget: req.body.budget,
@@ -138,28 +138,28 @@ let currentDate= year + "-" + month + "-" + date + " " + hours + ":" + minutes +
                 first.save(function (err) {
                     if (err){
                         req.flash('error','Error adding project');
-                        res.locals.redirect='/project/index'
+                        res.render("project/index")
                         next(error);
                     }
 
                     else{ 
                         req.flash('success','تمت اضافة المشروع بنجاح');
-                        res.locals.redirect= '/project/index'
-                       next() }
+                        res.render("project/index")
+                        next() }
 
                   }) },
                   delete:(req,res,next)=>{
-                    Meeting.deleteOne({_id:req.params.mid},function(err){
+                    Project.deleteOne({_id:req.params.mid},function(err){
                         if(err){
                             console.log(err)
                         }
                         else{
-                            console.log("one meeting has deleted")
+                            console.log("one project has deleted")
                                            }
                      
                     })
                     req.flash('error','تم حذف الإجتماع بنجاح');
-                    res.locals.redirect='/meetings/home'
+                    res.locals.redirect='/meetings/index'
                     next();
                 },
                     
@@ -188,49 +188,54 @@ let currentDate= year + "-" + month + "-" + date + " " + hours + ":" + minutes +
                       });
                 },
                 edit1:(req,res)=>{
-                    let meetingId= req.params.mid
-                    Meeting.findOne({_id:meetingId}).populate('userId','name').
-                    exec(function (err, meeting) {
-                        if (err) return handleError(err);
-                        res.locals.meeting =meeting
-                        User.find({}).then(users=>{
-                            res.locals.users = users; 
-                            console.log(users)
-                        res.render('meetings/editMeeting',meeting);
-                      });
-                })},
+                    let projectId= req.params.mid
+                    Project.find({_id:projectId})
+                .then(projects =>{
+                    res.locals.projects = projects;
+                    res.render('project/edit');
+                    }).catch(error =>{
+                   console.log('Error fetching projects. ');
+                    next(error)
+                });
+                   
+                    },
                 update:(req,res,next)=>{
-                    let latitude = req.body.latitude
-                    let longitude= req.body.longitude
-                    let userId= req.body.userId
-                    let title= req.body.title
-                    let startAt= req.body.startAt
-                    let hours= req.body.hours
-                    let seats= req.body.seats
-                    let description= req.body.description
-                    let from= req.body.from
-                    let to= req.body.to
-                    let shortDescription= req.body.shortDescription  
-                    console.log(''+userId)
-                Meeting.updateOne({_id:req.params.mid},{ 
-                        latitude: latitude,
-                        longitude: longitude,
-                        userId:userId,
-                        title:title,
-                        description:description,
-                        startAt:startAt,
-                        hours:hours,
-                        seats:seats,
-                        from:from, 
-                        shortDescription:shortDescription,
-                        to:to},function(err){
+                    let date_ob = new Date();
+                    let date = ("0" + date_ob.getDate()).slice(-2);
+  
+  // current month
+  let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+  
+  // current year
+  let year = date_ob.getFullYear();
+  
+  // current hours
+  let hours = date_ob.getHours();
+  
+  // current minutes
+  let minutes = date_ob.getMinutes();
+  
+  // current seconds
+  let seconds = date_ob.getSeconds();
+  let currentDate= year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds;
+  
+  
+  Project.updateOne({_id:req.params.mid},{
+                       userId: "5f563202d326f90fc208351e",
+                       title: req.body.title,
+                       postedDate: currentDate,
+                       budget: req.body.budget,
+                       type: req.body.type,
+                       description: req.body.description,
+                       requiredSkills: req.body.requiredSkills,
+                       minNumOfStudents: req.body.minNumOfStudents
+                        },function(err){
                         if(err){
                             console.log(err)
                         }
                         else{
                             req.flash('success', 'تم حفظ التغييرات بنجاح!')
-                            res.locals.redirect= '/meetings/home'
-                            next()
+                            res.render("project/done")
                         }
 
                 })

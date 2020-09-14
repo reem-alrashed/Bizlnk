@@ -11,7 +11,7 @@ router.get('/search/:pid',ProjectControler.search)
 router.get('/home',ProjectControler.indexHome)
 router.get('/new',ProjectControler.new)
 
-router.post('/create/:uid',[
+router.post('/create',[
     check('title').isLength({min:2}).withMessage(' العنوان يجب ان يكون ثلاثة احرف على الأقل  ')
     .isLength({max:70}).withMessage(' العنوان تجاوز عدد الاحرف المسموح بها   '),
 
