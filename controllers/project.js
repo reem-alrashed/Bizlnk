@@ -19,7 +19,21 @@ module.exports ={
                 res.locals.users = users;
                 res.locals.u = 0;
             
-            res.render("project/index")})
+            res.render("project/index")
+        })
+    })
+      },
+      indexHome:(req,res)=>{
+        Project.find().populate({path:'userId',model:User})
+        .exec(function(err, projects) 
+        {
+            res.locals.projects = projects;
+            User.find({}).then(users =>{
+                res.locals.users = users;
+                res.locals.u = 0;
+            
+            res.render("home")
+        })
     })
       }
       ,index4:(req,res)=>{
@@ -31,7 +45,8 @@ module.exports ={
                 res.locals.users = users;
                 res.locals.u = 0;
             
-            res.render("index")})
+            res.render("index")
+        })
       });},
      
     index2:(req,res,next)=>{
@@ -55,9 +70,12 @@ module.exports ={
     }
     ,
     indexView:(req,res)=>{
-        res.render('home');},
+        res.render("project/index")
+    }
+        ,
         indexView1:(req,res)=>{
-            res.render('meetings/meetings1');},
+            res.render('/meetings1');
+        },
         respondJON:(req,res)=>{
             res.json({status:httpStatusCodes.OK,
             data:res.locals.meetings});},
@@ -219,8 +237,9 @@ let currentDate= year + "-" + month + "-" + date + " " + hours + ":" + minutes +
 
             }
             
-            ,searchForm:(req,res)=>{
-                res.render('search');
+            ,
+            searchForm:(req,res)=>{
+                res.render('project/search');
             },
 
             search: (req,res)=>{

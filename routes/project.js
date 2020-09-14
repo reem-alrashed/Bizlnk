@@ -8,7 +8,7 @@ router.get('/search',ProjectControler.searchForm)
 router.get('/',ProjectControler.index3,ProjectControler.indexView)
 //router.get('/test',MeetingControler.index,MeetingControler.indexView)
 router.get('/search/:tid',ProjectControler.index4)
-router.get('/home',ProjectControler.index,ProjectControler.indexView1)
+router.get('/home',ProjectControler.indexHome)
 router.get('/new',ProjectControler.new)
 
 router.post('/create/:uid',[

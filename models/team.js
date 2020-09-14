@@ -22,14 +22,14 @@ TeamSchema = new Schema({
             required:true
         }
     },
-    // members:{
-    //     [
-    //         {
-    //             name:String,
-    //         Email:String
-    //     }
-    //     ]
-    // },
+    members:
+        [
+            {
+                name:String,
+            Email:String
+        }
+        ]
+    ,
     university:{
         type: String,
         trim: true,

@@ -419,6 +419,31 @@ background-image: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAA
                    <div class="elementor-widget-wrap">
                <div class="elementor-element elementor-element-e17903f elementor-widget elementor-widget-wp-widget-pt_main_page_latest_freelancers_big_class" data-id="e17903f" data-element_type="widget" data-widget_type="wp-widget-pt_main_page_latest_freelancers_big_class.default">
                <div class="elementor-widget-container">
+                <h5>المشاريع المضافة</h5>
+                                                                                   
+                <% projects.forEach(project => {  users.forEach(user => {  %>
+                <div class="card section-vbox padd20">
+
+                    <div class="row">
+                        <div class="project-title-list col-sm-12 col-md-12"> <h4><%= project.title %>
+ 
+                            
+                        </h4> </div>
+                    </div>
+
+                            <div class="d-lg-flex flex-row user-meta-data-row" style="padding: 10px;">
+                                <div class="project-title-list col-sm-12 col-md-12"  style="padding: 10px;"> 
+                                    <h4><%= project.description %> <br/>
+                                         Created by <%= user.name %> <br/>
+                                        <i class="fas fa-money-bill-alt"> <%= project.budget %> </i>  <br/>
+                                        <i class="fa fa-calendar"> <%= project.postedDate %></i>  <br/>
+                                        <i class="fas fa-user-tag"> 0 proposals</i> </h4> </div>
+                            </div>
+ 
+</div>
+                       <%})%>  
+                       <%})%>    
+                       <div class="see-all-freelancers"><a class="btn btn-primary btn-lg" href="http://sitemile.us/single-sites/project/service-provider-search/"> البحث عن مشاريع أخرى</a></div>		
            <h5>الشركات المسجلة في النظام</h5><div class="row" id="freelancers-widget">
            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
            <div class="card lift mb-3 card-of-user  " id="user-box-7" style="height: 345px;"> <div class="card-body text-center card-user-freelancer">
@@ -634,202 +659,7 @@ background-image: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAA
                        </div>
            </div>
        </section>
-               <section class="elementor-element elementor-element-c2cc714 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle elementor-invisible elementor-section elementor-top-section" data-id="c2cc714" data-element_type="section" data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
-                       <div class="elementor-container elementor-column-gap-default">
-               <div class="elementor-row">
-               <div class="elementor-element elementor-element-4d244466 elementor-column elementor-col-100 elementor-top-column" data-id="4d244466" data-element_type="column">
-           <div class="elementor-column-wrap  elementor-element-populated">
-                   <div class="elementor-widget-wrap">
-               <div class="elementor-element elementor-element-b6bf615 elementor-widget elementor-widget-wp-widget-pt_main_page_latest_proj_big_class_sml" data-id="b6bf615" data-element_type="widget" data-widget_type="wp-widget-pt_main_page_latest_proj_big_class_sml.default">
-               <div class="elementor-widget-container">
-           <h5>المشاريع المضافة</h5>
-                                                                                   
-
-                    
-
-
-
-
-               <div class="card section-vbox padd20">
-
-                   <div class="row">
-                       <div class="project-title-list col-sm-12 col-md-12"> <h4><a href="http://sitemile.us/single-sites/project/projects/uncategorized/i-need-my-app-ios-built/">I need my app IOS built</a>
-
-                       </h4> </div>
-                   </div>
-
-
-
-
-                           <div class="d-lg-flex flex-row user-meta-data-row">
-
-                                   <div class="  pl-0 pr-2 flex-shrink-1  "><i class="fas fa-money-bill-alt"></i> Budget: $1,700 </div>
-                                   <div class="pl-2 pr-2    flex-shrink-1 "><i class="fas fa-user-tag"></i> 1 proposals </div>
-                                   <div class="pl-2 pr-2    flex-shrink-1 "><i class="fa fa-calendar"></i> 28th Jul 2020 </div>
-                                   <div class="pl-2 pr-2    flex-shrink-1 "><i class="far fa-clock"></i> <span class="expiration_project_p hasCountdown"><span class="countdown_row countdown_show3"><span class="countdown_section"><span class="countdown_amount">17</span> Hr&nbsp;</span><span class="countdown_section"><span class="countdown_amount">26</span> Min&nbsp;</span><span class="countdown_section"><span class="countdown_amount">11</span> Sec&nbsp;</span></span></span> </div>
-
-                           </div>
-
-
-
-
-                           <div class=" excerpt-thing"><div class="col-xs-12">
-                   Lorem ipsum dolor sit amet, sit commodo tritani deterruisset ex. Ne vim ipsum homero audire. Stet viderer scribentur quo id, eius nulla oblique cum at. Ad semper possim imperdiet pro. Munere fierent interesset ut vim, soluta labitur id vim, pro splendide scriptorem cu.
-
-In per idque elitr imperdiet, alienum adolescen	            </div>
-                           
-
-
-                       </div> <!-- end excerpt-thing -->
-
-
-
-                   <div class="d-lg-flex flex-row user-meta-data-row">
-                       <div class="pt-2 pl-0 pr-1 ">
-                               <div class="avatar d-block" style="background-image: url(http://sitemile.us/single-sites/project/wp-content/uploads/2018/08/CERF-Cartoon-Avatar-Davide-300-web.jpg)">
-                               <span class="avatar-status bg-green"></span></div>
-                           </div>
-
-                       <div class="p-2 pt3-custom">
-                           <div class=""><a href="http://sitemile.us/single-sites/project/user-profile/admin/?profile_pg=">Steve Hudson</a></div>
-                        </div>
-
-                       <div class="p-2 pt3-custom"><i class="fas fa-star full_star"></i><i class="fas fa-star full_star"></i><i class="fas fa-star full_star"></i><i class="fas fa-star full_star"></i><i class="fas fa-star empty_star"></i> (3.7/5) on 3 rating(s)</div>
-                       <div class="p-2"> <a class="view-user-ratings-button btn btn-outline-primary btn-sm" href="http://sitemile.us/single-sites/project/user-profile/admin/?profile_pg=reviews">View User Ratings</a> </div>
-                   </div>
-
-
-
-
-
-               </div>
-
-   
-
-                                         
-
-                    
-
-
-
-
-               <div class="card section-vbox padd20">
-
-                   <div class="row">
-                       <div class="project-title-list col-sm-12 col-md-12"> <h4><a href="http://sitemile.us/single-sites/project/projects/uncategorized/clean-my-house-one-time-a-week/">Clean my house one time a week</a>
-
-                           
-                       </h4> </div>
-                   </div>
-
-
-
-
-                           <div class="d-lg-flex flex-row user-meta-data-row">
-
-                                   <div class="  pl-0 pr-2 flex-shrink-1  "><i class="fas fa-money-bill-alt"></i> Budget: $1,000 </div>
-                                   <div class="pl-2 pr-2    flex-shrink-1 "><i class="fas fa-user-tag"></i> 0 proposals </div>
-                                   <div class="pl-2 pr-2    flex-shrink-1 "><i class="fa fa-calendar"></i> 28th Jul 2020 </div>
-                                   <div class="pl-2 pr-2    flex-shrink-1 "><i class="far fa-clock"></i> <span class="expiration_project_p hasCountdown"><span class="countdown_row countdown_show3"><span class="countdown_section"><span class="countdown_amount">17</span> Hr&nbsp;</span><span class="countdown_section"><span class="countdown_amount">26</span> Min&nbsp;</span><span class="countdown_section"><span class="countdown_amount">11</span> Sec&nbsp;</span></span></span> </div>
-
-                           </div>
-
-
-
-
-                           <div class=" excerpt-thing"><div class="col-xs-12">
-                   Lorem ipsum dolor sit amet, sit commodo tritani deterruisset ex. Ne vim ipsum homero audire. Stet viderer scribentur quo id, eius nulla oblique cum at. Ad semper possim imperdiet pro. Munere fierent interesset ut vim, soluta labitur id vim, pro splendide scriptorem cu.
-
-In per idque elitr imperdiet, alienum adolescen	            </div>
-                           
-
-
-                       </div> <!-- end excerpt-thing -->
-
-
-
-                   <div class="d-lg-flex flex-row user-meta-data-row">
-                       <div class="pt-2 pl-0 pr-1 ">
-                               <div class="avatar d-block" style="background-image: url(http://sitemile.us/single-sites/project/wp-content/uploads/2018/08/CERF-Cartoon-Avatar-Davide-300-web.jpg)">
-                               <span class="avatar-status bg-green"></span></div>
-                           </div>
-
-                       <div class="p-2 pt3-custom">
-                           <div class=""><a href="http://sitemile.us/single-sites/project/user-profile/admin/?profile_pg=">Steve Hudson</a></div>
-                        </div>
-
-                       <div class="p-2 pt3-custom"><i class="fas fa-star full_star"></i><i class="fas fa-star full_star"></i><i class="fas fa-star full_star"></i><i class="fas fa-star full_star"></i><i class="fas fa-star empty_star"></i> (3.7/5) on 3 rating(s)</div>
-                       <div class="p-2"> <a class="view-user-ratings-button btn btn-outline-primary btn-sm" href="http://sitemile.us/single-sites/project/user-profile/admin/?profile_pg=reviews">View User Ratings</a> </div>
-                   </div>
-
-
-
-
-
-               </div>
-
-   
-
-
-
-
-               <div class="card section-vbox padd20">
-
-                   <div class="row">
-                       <div class="project-title-list col-sm-12 col-md-12"> <h4><a href="http://sitemile.us/single-sites/project/projects/uncategorized/garden-work-needed/">Garden work needed</a>
-
-                           
-                       </h4> </div>
-                   </div>
-
-
-
-
-                           <div class="d-lg-flex flex-row user-meta-data-row">
-
-                                   <div class="  pl-0 pr-2 flex-shrink-1  "><i class="fas fa-money-bill-alt"></i> Budget: $50 </div>
-                                   <div class="pl-2 pr-2    flex-shrink-1 "><i class="fas fa-user-tag"></i> 0 proposals </div>
-                                   <div class="pl-2 pr-2    flex-shrink-1 "><i class="fa fa-calendar"></i> 28th Jul 2020 </div>
-                                   <div class="pl-2 pr-2    flex-shrink-1 "><i class="far fa-clock"></i> <span class="expiration_project_p hasCountdown"><span class="countdown_row countdown_show3"><span class="countdown_section"><span class="countdown_amount">17</span> Hr&nbsp;</span><span class="countdown_section"><span class="countdown_amount">26</span> Min&nbsp;</span><span class="countdown_section"><span class="countdown_amount">11</span> Sec&nbsp;</span></span></span> </div>
-
-                           </div>
-
-
-
-
-                           <div class=" excerpt-thing"><div class="col-xs-12">
-                   Probatus dissentiunt ut mea. Quo cu lorem doctus verterem. Eu albucius partiendo corrumpit pro. Est id meis omnis percipitur, ad sit sint posse definitionem. Per sanctus rationibus in, has ceteros omittantur in, eu vim expetendis adversarium.
-
-Id cum decore accusam, probo consequat dissentiet duo ea, an cetero molest	            </div>
-                           
-
-
-                       </div> <!-- end excerpt-thing -->
-
-
-
-                   <div class="d-lg-flex flex-row user-meta-data-row">
-                       <div class="pt-2 pl-0 pr-1 ">
-                               <div class="avatar d-block" style="background-image: url(http://sitemile.us/single-sites/project/wp-content/uploads/2018/08/CERF-Cartoon-Avatar-Davide-300-web.jpg)">
-                               <span class="avatar-status bg-green"></span></div>
-                           </div>
-
-                       <div class="p-2 pt3-custom">
-                           <div class=""><a href="http://sitemile.us/single-sites/project/user-profile/admin/?profile_pg=">Steve Hudson</a></div>
-                        </div>
-
-                       <div class="p-2 pt3-custom"><i class="fas fa-star full_star"></i><i class="fas fa-star full_star"></i><i class="fas fa-star full_star"></i><i class="fas fa-star full_star"></i><i class="fas fa-star empty_star"></i> (3.7/5) on 3 rating(s)</div>
-                       <div class="p-2"> <a class="view-user-ratings-button btn btn-outline-primary btn-sm" href="http://sitemile.us/single-sites/project/user-profile/admin/?profile_pg=reviews">View User Ratings</a> </div>
-                   </div>
-               </div>
-                    <div class="see-all-freelancers"><a class="btn btn-primary btn-lg" href="http://sitemile.us/single-sites/project/advanced-search/">البحث عن مشاريع أخرى</a></div>                     		</div>
-               </div>
-                       </div>
-           </div>
-       </div>
-                       </div>
-           </div>
-       </section>
+            
        
                        </div>
            </div>
