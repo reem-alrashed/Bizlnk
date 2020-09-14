@@ -130,6 +130,9 @@ show: (req,res)=>{
 loginForm:(req,res)=>{
     res.render('user/login')
 },
+signInForm:(req,res)=>{
+    res.render('user/signIn')
+},
 login:(req,res,next)=>{
  
 
@@ -197,20 +200,19 @@ authenticate: passport.authenticate('local',{
             req.flash('loginerror', 'عذراً! يجب تسجيل الدخول للوصول للصفحة');
             res.render('user/login');
         }
+    },
+    showProfile:(req, res) =>{
+           //res.send('show user method');
+    User.findOne({_id:req.params.uid})
+    .then(user => {
+        res.locals.user=user;
+        console.log(user);
+        res.render('user/editprofile',user)
+     })
+    .catch(error=>{
+        console.log('Error fetching users.');
+    });
+
     }
-
-    /* 
-        validator:(req,res)=>{
-        const error= validationResult(req)
-        if(!error.isEmpty()){
-            req.flash('error','أدخل بيانات صحيحة')
-            res.redirect('/users/new')
-                      
-            // res.json({error:error.array()})
-            // next();
-        }
-
-    }*/
-
 
 }

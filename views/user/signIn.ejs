@@ -1,0 +1,49 @@
+<div class="page_heading_me pt_template_page_1" id="pt_template_page_1">
+    <div class="page_heading_me_inner">
+    <div class="col-sm-12" id="x_templ_1_pt">
+      <div class="mm_inn">إنشاء حساب</div></div>    
+    </div>
+    </div><br><br>
+<form method="POST" action="/users/insert">
+    <div class="form-group" dir="rtl" align="right" >
+      <label for="name">اسم المستخدم</label>
+      <input type="text" class="form-control" name="name" placeholder="اسم المستخدم" aria-describedby="emailHelp">
+      </div>
+    
+    <div class="form-group" dir="rtl" align="right" >
+      <label for="email">البريد الإلكتروني</label>
+      <input type="email" class="form-control" name="email"  placeholder="البريد الإلكتروني" >
+    </div>
+
+    <div class="form-group" dir="rtl" align="right" dir="rtl" align="right" >
+        <label for="exampleInputPassword1">كلمة المرور</label>
+        <input type="password" class="form-control" name="password" placeholder="كلمة المرور">
+      </div>
+
+      <h2>&nbsp;</h2><fieldset class="form-group">
+        <div class="row"  dir="rtl" align="right" dir="rtl" align="right" >
+          <legend class="col-form-label col-sm-2 pt-0">نوع المستخدم</legend>
+          <br></br>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
+              <label class="form-check-label" for="gridRadios1">&nbsp; &nbsp; طالب</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+              <label class="form-check-label" for="gridRadios2">&nbsp; &nbsp; مستثمر </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="row"  dir="rtl" align="right" dir="rtl" align="right" >
+        <label for="bio">نبذة</label>
+        <textarea class="form-control" type="text" name="bio" rows="4" placeholder="نبذة"></textarea>
+      </div>
+      <br></br>
+      <button type="submit" class="btn btn-primary">إنشاء حساب</button>
+      <div class="alrd-register-login">
+        لديك حساب؟ <a href="/users/login" class="link-man-1">تسجيل الدخول</a>	</div>
+    </form>
+  </div>

@@ -3,90 +3,56 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-<div class="container emp-profile">
-            <form method="post">
+<div class="container emp-profile" style="text-align: right;">
+    <div class="page_heading_me pt_template_page_1" id="pt_template_page_1">
+        <div class="page_heading_me_inner">
+        <div class="col-sm-12" id="x_templ_1_pt">
+          <div class="mm_inn">حسابي</div></div>    
+        </div>
+        </div>
+        <br/>
+        <br/>
                 <div class="row">
-                    <div class="col-md-4">
-                    </div>
-                    <div class="col-md-6">
-                        <div class="profile-head"> <h5> </h5>
-                                    <h6> نبذة </h6>
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">المعلومات</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                      
-                    </div>
+                
                     <div class="col-md-8">
                         <div class="tab-content profile-tab" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>اسم المستخدم</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>اسم المستخدم</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>الاسم</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p> الاسم</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>البريد الإلكتروني</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>البريد الإلكتروني</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>رقم الهاتف</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>123 456 7890</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>المجال</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Web Developer and Designer</p>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label>الخبرة</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Expert</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>عدد المشاريع</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>20</p>
-                                            </div>
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </form>           
+                                <br><br>
+                                <form method="POST" action="/users/<%= user._id %>/edit?_method=PUT">
+                                    <div class="form-group" dir="rtl" align="right" >
+                                      <label for="name">اسم المستخدم</label>
+                                      <input type="text" class="form-control" name="name" value="<%= user.name %>" placeholder="اسم المستخدم" aria-describedby="emailHelp">
+                                   
+                                    
+                                    <div class="form-group" dir="rtl" align="right" >
+                                      <label for="email">البريد الإلكتروني</label>
+                                      <input type="email" class="form-control" name="email"   value="<%=user.email%>" placeholder="البريد الإلكتروني" >
+                                    </div>
+                                   
+                                      <div class="form-group" dir="rtl" align="right" >
+                                  
+                                      <label for="gender" >المجال</label>
+                                      <select name="gender" style=" width: 100%;
+                                      padding: 12px 20px;
+                                      margin: 8px 0;
+                                      box-sizing: border-box;
+                                      font-size: 21px;
+                                      font-style:bold;" >
+                                     <option value="تقنية">
+                                      تقنية</option>
+                                    <option value="تعليم">
+                                      تعليم</option>
+                                      </select></div>
+                                
+                                      <div class="form-group" dir="rtl" align="right" >
+                                        <label for="bio">نبذة</label>
+                                        <textarea class="form-control" type="text" name="bio" value="<%=user.bio%>" rows="4" placeholder="نبذة"> <%=user.bio%></textarea>
+                                      </div>
+                                 
+                                
+                                      <button type="submit" class="btn btn-primary" role="button" aria-pressed="true">حفظ التغييرات</button>
+                                
+                                    </form> 
+</div>    
         </div>
+        <hr/>
