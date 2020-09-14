@@ -9,9 +9,11 @@ ProjectSchema = new Schema ({
     shortDescription: String,
     postedDate: Date,
     endDate: Date,
-    requiredSkills: Array,
-    
-    numberOfStudents: Number
+    budget:Number,
+    type:String,
+    requiredSkills: Array,  
+    minNumOfStudents: Number,
+    Files: Binary
 })
 
 

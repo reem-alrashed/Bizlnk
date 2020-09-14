@@ -15,7 +15,16 @@ UserSchema = new Schema({
         required:true
     },
     isAdmin: Boolean,
-    bio: String
+    field:{
+        type: String,
+        trim: true,
+        required:true
+    },
+    breif: {
+        type: String,
+        trim: true,
+        required:true
+    }
     
 })
 

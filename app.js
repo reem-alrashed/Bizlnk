@@ -53,16 +53,11 @@ next();
 })
 
 
-app.use((req,res,next)=>{
-    if(req.session.user){
-        console.log(req.session.user)
-    }
-next()
-})
 app.use('/',router);
 
 
 app.listen(app.get('port'),()=>{ //'ctrl + c' to close the port 
       console.log('express has started..!');
+});
 
 

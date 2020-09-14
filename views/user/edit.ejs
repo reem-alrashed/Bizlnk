@@ -15,12 +15,19 @@
         <input type="password" class="form-control" name="password" value="<%=user.password%>" placeholder="كلمة المرور">
       </div>
       <div class="form-group" dir="rtl" align="right" >
-        <label for="gender">الجنس</label>
-        <select class="form-control" name="gender"  value="<%=user.gender%>">
-          <option value="male">ذكر</option>
-          <option value="female">انثى</option>
-        </select>
-      </div>
+  
+      <label for="gender" >المجال</label>
+      <select name="gender" style=" width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      font-size: 21px;
+      font-style:bold;" >
+     <option value="تقنية">
+      تقنية</option>
+    <option value="تعليم">
+      تعليم</option>
+      </select></div>
 
       <div class="form-group" dir="rtl" align="right" >
         <label for="bio">نبذة</label>
