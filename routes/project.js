@@ -7,7 +7,7 @@ router.get('/search',ProjectControler.searchForm)
 
 router.get('/',ProjectControler.index3,ProjectControler.indexView)
 //router.get('/test',MeetingControler.index,MeetingControler.indexView)
-router.get('/search/:tid',ProjectControler.index4)
+router.get('/search/:pid',ProjectControler.search)
 router.get('/home',ProjectControler.indexHome)
 router.get('/new',ProjectControler.new)
 

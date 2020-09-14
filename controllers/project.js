@@ -5,6 +5,7 @@ const httpStatusCodes = require('http-status-codes');
 
 const {check ,body, validationResult } = require('express-validator');
 const Project = require('../models/project');
+const project = require('../models/project');
 
 
 
@@ -38,16 +39,15 @@ module.exports ={
       }
       ,index4:(req,res)=>{
       
-        project.find({userId:req.params.tid}).populate({path:'userId',model:User}).exec(function(err, meetings) {
-            res.locals.meetings = meetings;
-            User.find({})
-            .then(users =>{
-                res.locals.users = users;
-                res.locals.u = 0;
-            
-            res.render("index")
+        Project.find({_id:req.params.pid}).then(project=>{
+            res.locals.project = project 
+        render('project/search') 
+           })
+        .catch(error => {
+            console.log('Error')
+            next(error)
         })
-      });},
+    },
      
     index2:(req,res,next)=>{
         Meeting.findOne({}).populate('themeId').exec(function (err, meeting) {
@@ -239,18 +239,25 @@ let currentDate= year + "-" + month + "-" + date + " " + hours + ":" + minutes +
             
             ,
             searchForm:(req,res)=>{
-                res.render('project/search');
+                Project.find({})
+                .then(projects =>{
+                    res.locals.projects = projects;
+                    res.render('project/search');
+                    }).catch(error =>{
+                   console.log('Error fetching projects. ');
+                    next(error)
+                });
             },
-
+            
             search: (req,res)=>{
-                Meeting.find({title:req.query.value})
-                    .then(meetings =>{
-                        res.locals.meetings = meetings;
-                        console.log(meetings)
-                    res.render("searchCards")
+                Project.find({_id:req.params.pid})
+                    .then(projects =>{
+                        res.locals.projects = projects;
+                        console.log(projects);
+                    res.render("project/searchCard")
                 })
                 .catch(error=>{
-                    res.send('Error fetching meetings');
+                    res.send('Error fetching projects');
                 });
               },
 
