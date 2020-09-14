@@ -13,7 +13,7 @@ const User = require('./models/user');
 
 app = express(); 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/meetup',{
+mongoose.connect('mongodb://localhost:27017/Taawon',{
     useNewUrlParser:true
 });
 

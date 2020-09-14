@@ -12,8 +12,7 @@ ProjectSchema = new Schema ({
     budget:Number,
     type:String,
     requiredSkills: Array,  
-    minNumOfStudents: Number,
-    Files: Binary
+    minNumOfStudents: Number
 })
 
 
