@@ -51,7 +51,7 @@
 <h1 class="wp-heading-inline">المشاريع</h1>
 <br/><br/><br/>
 
- <a href="/users/new" class="page-title-action">اضافة مشاريع</a>
+ <a href="/projects/new" class="page-title-action">اضافة مشاريع</a>
  <br/> <br/>
  <br/>
 
@@ -64,7 +64,6 @@
                      <th scope="col" id="author" class="text-center">وصف</th>	
                      <th scope="col" id="author" class="text-center">صاحب المشروع</th>	
                      <th scope="col" id="author" class="text-center">تاريخ اضافة المشروع</th>	
-                     <th scope="col" id="author" class="text-center">تاريخ نهاية المشروع</th>	
                      <th scope="col" id="author" class="text-center">الميزانية</th>	
                      <th scope="col" id="options" class="text-center">العمليات</th>	
                     </tr>
@@ -73,16 +72,11 @@
                     <tbody id="the-list">	
                         <tr>
                             <td > <strong><%= project.title %></strong> </td>
+                            <td class="author column-author" data-colname="Author"><%= project.description %></td>
                             <td > <strong><%= user.name %></strong> </td>
-                                    <td class="author column-author" data-colname="Author"><%= project.shortDescription %></td>
-                                    <td>
                                         <td class="author column-author" data-colname="Author"><%= project.postedDate %></td>
-                                    <td>
-                                        <td class="author column-author" data-colname="Author"><%= project.endDate %></td>
-                                    <td>
                                         <td class="author column-author" data-colname="Author"><%= project.budget %></td>
                                         <td>
-
                                     <div ><a class="awesome" href="/users/<%= user._id %>/update">تعديل</a> 
                                         <a class="awesome" href="/users/<%= user._id%>/show"target="_blank">عرض</a>
                                         <a class="trash" href="/users/<%= user._id %>/delete?_method=DELETE" >حذف</a>

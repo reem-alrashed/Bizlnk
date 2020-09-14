@@ -34,10 +34,7 @@ TeamSchema = new Schema({
         type: String,
         trim: true,
         required: true
-    },
-
-  
-    bio: String
+    }
     
 })
 

@@ -1,27 +1,25 @@
 
 const User = require('../models/user');
-const Attend = require('../models/attende')
+const Attend = require('../models/project')
 const httpStatusCodes = require('http-status-codes');
-const attend = require('./attend');
 
 const {check ,body, validationResult } = require('express-validator');
-const project = require('../models/project');
+const Project = require('../models/project');
 
 
 
 module.exports ={
     index3:(req,res)=>{
         console.log("\n\n\n\n\n\n")
-        Project.find().populate({path:'userId',model:user})
-        .exec(function(err, Project) 
+        Project.find().populate({path:'userId',model:User})
+        .exec(function(err, projects) 
         {
             res.locals.projects = projects;
-            User.find({})
-            .then(users =>{
+            User.find({}).then(users =>{
                 res.locals.users = users;
                 res.locals.u = 0;
             
-            res.render("index")})
+            res.render("project/index")})
     })
       }
       ,index4:(req,res)=>{
@@ -65,7 +63,7 @@ module.exports ={
             data:res.locals.meetings});},
     new:(req,res)=>{
 
-            res.render('meetings/addMeeting');},    
+            res.render('project/new');},    
             new1:(req,res)=>{
                 Theme.find({})
                 .then(themes =>{
@@ -89,45 +87,46 @@ module.exports ={
                 else next();
               },
               create:(req,res,next)=>{
+                  let date_ob = new Date();
+                  let date = ("0" + date_ob.getDate()).slice(-2);
+
+// current month
+let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+
+// current year
+let year = date_ob.getFullYear();
+
+// current hours
+let hours = date_ob.getHours();
+
+// current minutes
+let minutes = date_ob.getMinutes();
+
+// current seconds
+let seconds = date_ob.getSeconds();
+let currentDate= year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds;
 
 
-                
-                let latitude = req.body.latitude
-                let longitude= req.body.longitude
-                let userId= req.body.userId
-                let title= req.body.title
-                let startAt= req.body.startAt
-                let hours= req.body.hours
-                let themeId= req.body.themeId
-                let description= req.body.description
-                let from= req.body.from
-                let to= req.body.to
-                let shortDescription= req.body.shortDescription
-                let seats= req.body.seats
-                const first = new Meeting({
-                    latitude: latitude,
-                    longitude: longitude,
-                    userId:userId,
-                    title:title,
-                    description:description,
-                    startAt:startAt,
-                    hours:hours,
-                    themeId:themeId,
-                    from:from,
-                    to:to,
-                    shortDescription:shortDescription,
-                    seats:seats
+                const first = new Project({
+                     userId: req.body.userId,
+                     title: req.body.title,
+                     postedDate: currentDate,
+                     budget: req.body.budget,
+                     type: req.body.type,
+                     description: req.body.description,
+                     requiredSkills: req.body.requiredSkills,
+                     minNumOfStudents: req.body.minNumOfStudents
  })
                 first.save(function (err) {
                     if (err){
-                        req.flash('error','Error adding meeting');
-                        res.locals.redirect='/meetings/home'
+                        req.flash('error','Error adding project');
+                        res.locals.redirect='/project/index'
                         next(error);
                     }
 
                     else{ 
-                        req.flash('success','تم اضافة الإجتماع بنجاح');
-                        res.locals.redirect= '/meetings/home'
+                        req.flash('success','تمت اضافة المشروع بنجاح');
+                        res.locals.redirect= '/project/index'
                        next() }
 
                   }) },
