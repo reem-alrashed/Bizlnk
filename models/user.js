@@ -20,11 +20,8 @@ UserSchema = new Schema({
         trim: true,
         required:true
     },
-    breif: {
-        type: String,
-        trim: true,
-        required:true
-    }
+    isInvestor: Boolean,
+    isAdmin: Boolean
     
 })
 
