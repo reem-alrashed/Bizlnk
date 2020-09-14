@@ -164,18 +164,18 @@ let currentDate= year + "-" + month + "-" + date + " " + hours + ":" + minutes +
                 },
                     
                     show:(req,res,next)=>{
-                        let meetingId= req.params.mid
-                        Meeting.findOne({_id:meetingId})
-                        .then(meeting =>{
-                            res.locals.meeting =meeting
-                            next()
+                        let projectId= req.params.mid
+                        Project.findOne({_id:projectId})
+                        .then(project =>{
+                            res.locals.project =project
+                            res.render('project/showProject');
                         })
                         .catch(error =>{
-                            console.log('Error fetching meetings. ');
+                            console.log('Error fetching projects. ');
                             next(error)
                         })
                     },    showView:(req,res)=>{
-                        res.render('show-meeting');},
+                        res.render('show-project');},
                   edit:(req,res)=>{
                     let meetingId= req.params.mid
                     Meeting.findOne({_id:meetingId})

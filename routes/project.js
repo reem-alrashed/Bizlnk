@@ -4,7 +4,7 @@ const {check ,body, validationResult } = require('express-validator');
 
 router.get('/result',ProjectControler.search)
 router.get('/search',ProjectControler.searchForm)
-
+router.get('/:mid/show',ProjectControler.show)
 router.get('/',ProjectControler.index3,ProjectControler.indexView)
 //router.get('/test',MeetingControler.index,MeetingControler.indexView)
 router.get('/search/:pid',ProjectControler.search)

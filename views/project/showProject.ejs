@@ -1,0 +1,44 @@
+
+  <!-- Page Content -->
+  <div class="container" class="d-flex p-2">
+
+    <div class="row justify-content-center">
+
+      <!-- Post Content Column -->
+      <div class="col-lg-8">
+
+
+    <div class="card" align="right" dir="rtl" >
+      <div class="card-body">
+
+
+        <!-- Title -->
+        <h1 class="mt-4 text-right"><%= project.title %> </h1>
+
+       
+
+          <p class="lead text-right">  <%= project.description %></p> </br>
+
+ 
+
+
+<div class="card-group">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"align="center">تاريخ الإنشاء  </h5>
+      <span class="badge badge-primary" style="font-size: 16px"></span>
+     <p align="center"> <%= project.postedDate.toDateString() %> </p>
+        </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title" align="center">الميزانية</h5>
+      <p align="center" >
+       <h3 align="center" > <%= project.budget %> </h3>
+        </p>    </div>
+  </div>
+      
+</div>
+</div>
+</div></div></div></div>
