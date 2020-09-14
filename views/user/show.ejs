@@ -1,0 +1,33 @@
+
+    <html lang="ar" dir="rtl"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<br><br>
+
+    <div class="container" align="center">
+    <div class="row">
+      <div class="col">
+   <div  class="card" style="width:40%; text-align: right;" >
+     <div class="card text-center">
+     
+        <div class="card-body">
+          <h3 class="card-title "><%= user.name %> </h3>
+          <p class="card-text text-muted"><%= user.email %> </p>
+          <p class="card-text text-right"> <%=user.bio%>   </p>
+        </div>
+        <div class="card-text text-left">
+          <% let gender = (user.gender == 'true') %> 
+          <% if (gender) { %> 
+            <h4> <span class="badge badge-primary">ذكر</span></h4>
+          <% } else { %> 
+            <h4><span class="badge badge-primary" style="background-color: palevioletred;">أنثى</span></h4>
+
+          <% } %> 
+        </div>
+      </div>
+      </div>
+    </span>
+      </html>
+
+
+     
+      
