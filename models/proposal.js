@@ -4,7 +4,7 @@ const { Schema } = require("mongoose")
 const passportLocalMongoose = require('passport-local-mongoose');
 
 ProposalSchema = new Schema({
-    teamId: { type: Schema.Types.ObjectId, ref: 'Team' }, 
+    userId: { type: Schema.Types.ObjectId, ref: 'User' }, 
     projectId: { type: Schema.Types.ObjectId, ref: 'Project' },
     approved:Boolean
 })

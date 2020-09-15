@@ -1,4 +1,6 @@
 const User = require('../models/user');
+const Project = require('../models/project');
+
 const user = require('../models/user');
 const { body, validationResult } = require('express-validator');
 const passport = require('passport');
@@ -28,14 +30,13 @@ new : (req , res ) =>{
 
     res.render('user/new')
     },
-    insert:(req , res) => {
-    User.insertMany({
+    insert:(req , res,next) => {
+  let newUser= User.insertMany({
     name : req.body.name ,
     email : req.body.email ,
-    password : req.body.password ,
-    gender : req.body.gender ,
+    field :  "تقنية",
     bio : req.body.bio ,
-    
+    userType: req.body.gridRadios  
     })
        
 User.register(newUser, req.body.password, (error, user) =>{
@@ -134,15 +135,6 @@ signInForm:(req,res)=>{
     res.render('user/signIn')
 },
 login:(req,res,next)=>{
- 
-
-       const error= validationResult(req)
-            if(!error.isEmpty()){
-                
-                 res.json({error:error.array()})
-
-                  
-}
 
     User.findOne({email:req.body.email, password:req.body.password})
     .then(user => {
@@ -150,7 +142,7 @@ login:(req,res,next)=>{
             req.flash('success','تم بنجاح تسجيل الدخول')
         req.session.user=user
         //console.log(req.session.user)
-        res.redirect('../meetings')
+        res.redirect('../users')
         }
         
         res.render('user/login')
@@ -162,10 +154,10 @@ login:(req,res,next)=>{
 
 },
 authenticate: passport.authenticate('local',{
-    failureRedirect: '/users/login',
-    failureFlash: 'الرجاء التحقق من بيانات الدخول',
     successRedirect: '/users',
-    successFlash: 'تم تسجيل الدخول بنجاح'
+    successFlash: 'تم تسجيل الدخول بنجاح',
+    failureRedirect: '/users/login',
+    failureFlash: 'الرجاء التحقق من بيانات الدخول'
 }),
     validator:(req,res,next)=>{
         
@@ -213,6 +205,19 @@ authenticate: passport.authenticate('local',{
         console.log('Error fetching users.');
     });
 
-    }
+    },
+    showProjects:(req, res) =>{
+        //res.send('show user method');
+ Project.find({userId:req.params.uid})
+ .then(projects => {
+     res.locals.projects=projects;
+     console.log(projects);
+     res.render('user/showProjects',projects)
+  })
+ .catch(error=>{
+     console.log('Error fetching project.');
+ });
+
+ }
 
 }

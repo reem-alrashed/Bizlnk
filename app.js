@@ -11,6 +11,7 @@ const connectflash = require('connect-flash')
 const User = require('./models/user');
 
 
+
 app = express(); 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/Taawon',{
@@ -30,7 +31,11 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
 app.use(cookieParser('gorgoues team'))
-app.use(expressSession ({secret: 'gorgoues team',resave: false ,saveUninitialized:false ,cookie: {maxAge: 6000}}))
+app.use(expressSession ({
+    secret: 'gorgoues team'
+    ,resave: false
+ ,saveUninitialized:false ,
+ cookie: {maxAge: 6000}}))
 
 
 /* Passport */
@@ -52,6 +57,12 @@ res.locals.currentUser= req.user;
 next();
 })
 
+app.use((req,res,next)=>{
+    if(req.session.user){
+        console.log(req.session.user)
+    }
+next()
+})
 
 app.use('/',router);
 

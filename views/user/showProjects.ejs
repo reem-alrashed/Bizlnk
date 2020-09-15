@@ -1,0 +1,23 @@
+                                                                                
+                <% projects.forEach(project => {   %>
+                    <div class="card section-vbox padd20">
+    
+                        <div class="row">
+                            <div class="project-title-list col-sm-12 col-md-12"> <h4><%= project.title %>
+     
+                                
+                            </h4> </div>
+                        </div>
+    
+                                <div class="d-lg-flex flex-row user-meta-data-row" style="padding: 10px;">
+                                    <div class="project-title-list col-sm-12 col-md-12"  style="padding: 10px;"> 
+                                        <h4><%= project.description %> <br/>
+                                            <i class="fas fa-money-bill-alt"> <%= project.budget %> </i>  <br/>
+                                            <i class="fa fa-calendar"> <%= project.postedDate %></i>  <br/>
+                                            <i class="fas fa-user-tag"> 0 proposals</i> </h4> </div>
+                                            <a href="/proposals/<%=project._id%>/show">Show proposals</a>
+                                </div>
+     
+    </div>
+                           <%})%>  
+                  

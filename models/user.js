@@ -26,6 +26,7 @@ UserSchema = new Schema({
 })
 
 
+
 UserSchema.plugin(passportLocalMongoose, {
     usernameField: 'email'
 });

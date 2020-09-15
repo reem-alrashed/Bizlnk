@@ -17,9 +17,7 @@ module.exports ={
         {
             res.locals.projects = projects;
             User.find({}).then(users =>{
-                res.locals.users = users;
-                res.locals.u = 0;
-            
+                res.locals.users = users;            
             res.render("project/index")
         })
     })
