@@ -74,6 +74,7 @@ body{
 
 
 <% if(typeof(projects)!='undefined') { projects.forEach(project => { %>
+    <form action="/proposals/5f563202d326f90fc208351e/<%= project._id %>/submit" method="POST">
                                                                   
         <div class="card section-vbox padd20">
 
@@ -89,14 +90,17 @@ body{
                             <h4><%= project.description %> <br/>
                                 <i class="fas fa-money-bill-alt"> <%= project.budget %> </i>  <br/>
                                 <i class="fa fa-calendar"> <%= project.postedDate %></i>  <br/>
-                                <i class="fas fa-user-tag"> 0 proposals</i> </h4> </div>
-                    </div>
+                                <i class="fas fa-user-tag"> 0 proposals</i> </h4> 
+                            
+
+                      <button type="submit" class="btn btn-primary" align="left"> تقديم عرض</button>
+                            </div>       </div>
 
 </div>
                <%})%>  
 
     <% } %>  
-
+</form>
 
 
                </div>

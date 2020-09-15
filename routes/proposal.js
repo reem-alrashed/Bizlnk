@@ -1,10 +1,10 @@
-const router = require('express').Router()
-const proposalsControler =require('../controllers/proposal')
+const router = require('express').Router(),
+proposalsControler = require('../controllers/proposal')
 const { body } = require('express-validator');
 
 
-router.get('/:pid/show' , proposalsControler.showProposals)
-router.post('/:pid/:uid/submit' , proposalsControler.submitProposals)
+router.get('/:pid/show' , proposalsControler.showProjectProposals);
+router.post('/:pid/:uid/submit' , proposalsControler.submitProposal);
 
 
 module.exports = router;
