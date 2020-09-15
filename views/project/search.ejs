@@ -63,13 +63,13 @@ body{
                         </div>
                </div>
 -->
+<% projects.forEach(project => { %>
 <div align="right" dir="rtl">
-    <% projects.forEach(project => { %>
-        <a href="/projects/search/<%= project._id %>"> <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
+    <a href="/projects/search/<%= project._id %>"> <button type="button" class="btn btn-primary">
             <%= project.type %>
       </button> </a>
-      <%}) %>  
-</div>
+    </div>
+    <%}) %>  
 <br><br>
 
 
