@@ -20,6 +20,7 @@
 <p>يتم ذلك من خلال طرح مشاريع ليتم تنفيذها من قبل الطلاب</p>
   </div>
 
+  <br></br>
   <div class="container">
     <h1 style="text-align: center;">خطوات سير العمل</h1>
     <div class="row">
@@ -47,17 +48,12 @@
       </div>
     </div>
   </div>
-
-                <h5>المشاريع المضافة</h5>
-                                                                                   
+  <br></br>
+                <h5>المشاريع المضافة</h5>                                                                   
                 <% projects.forEach(project => {    %>
-                <div class="card section-vbox padd20">
-
+                <div class="card section-vbox padd20" style="text-align: center;">
                     <div class="row">
-                        <div class="project-title-list col-sm-12 col-md-12"> <h4><%= project.title %>
- 
-                            
-                        </h4> </div>
+                  <div class="project-title-list col-sm-12 col-md-12"> <h4><%= project.title %>       </h4> </div>
                     </div>
 
                             <div class="d-lg-flex flex-row user-meta-data-row" style="padding: 10px;">
@@ -67,142 +63,32 @@
                                         <i class="fas fa-money-bill-alt"> <%= project.budget %> </i>  <br/>
                                         <i class="fa fa-calendar"> <%= project.postedDate %></i>  <br/>
                                         <i class="fas fa-user-tag"> 0 proposals</i> </h4> </div>
-                            </div>
- 
-</div>
+                            </div> </div>
                        <%})%>    
-                       <div class="see-all-freelancers"><a class="btn btn-primary btn-lg" href="http://sitemile.us/single-sites/project/service-provider-search/"> البحث عن مشاريع أخرى</a></div>		
-           <h5>الشركات المسجلة في النظام</h5><div class="row" id="freelancers-widget">
-           <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-           <div class="card lift mb-3 card-of-user  " id="user-box-7" style="height: 345px;"> <div class="card-body text-center card-user-freelancer">
 
-
-               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pr_usr">
-
-
-
-                   <div class="freelancer-widget-title"><h4><a href="http://sitemile.us/single-sites/project/user-profile/leo912312/?profile_pg=">Lenora Scheer</a></h4></div>
-
-                   <div class="freelancer-widget-rating-stars"> (No rating) </div>
-
-                   
-
-                   <div class="pr_hr">na <span class="no-weight">/hr</span> </div>
-
-
-                
-
-               </div>
-
-
-           </div>	</div></div>
-
-
-       
-           <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-           <div class="card lift mb-3 card-of-user  " id="user-box-34" style="height: 345px;"> <div class="card-body text-center card-user-freelancer">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pr_usr">
-
-
-
-                   <div class="freelancer-widget-title"><h4><a href="http://sitemile.us/single-sites/project/user-profile/LikDweli/?profile_pg=">LikDweli</a></h4></div>
-
-                   <div class="freelancer-widget-rating-stars"> (No rating) </div>
-
-                   
-
-                   <div class="pr_hr">na <span class="no-weight">/hr</span> </div>
-
-
-         
-
-               </div>
-
-
-           </div>	</div></div>
-
-
-
-       
-           <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-           <div class="card lift mb-3 card-of-user  " id="user-box-3" style="height: 345px;"> <div class="card-body text-center card-user-freelancer">
-
-
-
-               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pr_usr">
-
-
-
-                   <div class="freelancer-widget-title"><h4><a href="http://sitemile.us/single-sites/project/user-profile/freelanceruser/?profile_pg=">Manuel Gillette</a></h4></div>
-
-                   <div class="freelancer-widget-rating-stars"> (No rating) </div>
-
-                   
-
-                   <div class="pr_hr">na <span class="no-weight">/hr</span> </div>
-
-
-                
-
-               </div>
-
-
-           </div>	</div></div>
-
-
-
-       
-           <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-           <div class="card lift mb-3 card-of-user  " id="user-box-8" style="height: 345px;"> <div class="card-body text-center card-user-freelancer">
-
-
-
-               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pr_usr">
-
-
-
-                   <div class="freelancer-widget-title"><h4><a href="http://sitemile.us/single-sites/project/user-profile/Kuhn1231/?profile_pg=">Kuhn Robert</a></h4></div>
-
-                   <div class="freelancer-widget-rating-stars"> (No rating) </div>
-
-                   
-
-                   <div class="pr_hr">na <span class="no-weight">/hr</span> </div>
-
-
-             
-
-               </div>
-
-
-           </div>	</div></div>
-
-
-
-
-
-       </div><div class="see-all-freelancers"><a class="btn btn-primary btn-lg" href="http://sitemile.us/single-sites/project/service-provider-search/"> البحث عن شركات أخرى</a></div>		</div>
-               </div>
-                       </div>
-           </div>
-       </div>
-                       </div>
-           </div>
+                  <br></br>
+         <div class="see-all-freelancers" style="text-align: center;"><a class="btn btn-info btn-lg" > البحث عن مشاريع أخرى</a>
+        <br></br>
+        <h5>الداعمين للمنصة</h5><div class="row" id="freelancers-widget"></div>	
+
+           <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+           <div class="card lift mb-3 card-of-user  " id="user-box-8" style="height: 345px;"> 
+            <div class="card-body text-center ">
+               <div class="title"><h4>الاتحاد السعودي للأمن السيبراني والبرمجة والدرونز</h4></div>
+                </div></div></div>
+
+            <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+                <div class="card lift mb-3 card-of-user" id="user-box-3" style="height: 345px;"> 
+                 <div class="card-body text-center ">
+                <div class="title"><h4>جامعة الأميرة نورة بنت عبدالرحمن</h4></div>      
+                </div></div></div></div>
+<br></br>
+       </div><div class="see-all-freelancers" style="text-align: center;" ><a class="btn btn-info btn-lg" > البحث عن شركات أخرى</a></div>
+       <br></br>   </div>   </div></div> </div></div>
+                 </div>  </div>
        </section>
-            
-   
-            
-       
-                       </div>
-           </div>
-       </div>
-                   
-</div>
-
-</div>
-
-
+        </div> </div>
+       </div></div></div>
 </div>
        </div>
-
 </body></html>
