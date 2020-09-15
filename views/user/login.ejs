@@ -1,13 +1,22 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<div class='container' style="text-align: center;">
+<style>
+  #h1{
+font-size:30px; 
+
+ padding:10px;
+ text-align: center;
+}
+
+</style>
+<div class="container"> 
   <hr/>
-  <div class="container text-right">
     <%  if (flashMessages.loginerror){ %>
                 <div class="alert alert-danger"> <%= flashMessages.loginerror %> </div>    
                 <% } %>
-      </div>
-  <h1>تسجيل الدخول</h1>
-        <form method="POST" action="/users/login">
+     
+      <div id="h1"class="p-3 mb-2 bg-light text-dark">تسجيل الدخول</div>
+      <form method="POST" action="/users/login">
          
             <div class="form-group" dir="rtl" align="right" >
               <label for="email">البريد الإلكتروني</label>
@@ -17,10 +26,8 @@
                 <label for="exampleInputPassword1">كلمة المرور</label>
                 <input type="password" class="form-control" name="password" placeholder="كلمة المرور">
               </div>
-              
-<div align="left"> 
-              <button type="submit" class="btn btn-primary" align="left">تسجيل الدخول</button>
-            </div>
+              <button type="submit" class="btn btn-info">إنشاء حساب</button>
+
             </form>
 
 
