@@ -2,9 +2,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="/projects/home">تعاون</a>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active"><a title="Project Search" href="/projects/search"  class="nav-link">أفكار مشاريع</a></li>
@@ -14,15 +11,19 @@
       <li  class="nav-item active"><a title="My Account" href="/users/5f563202d326f90fc208351e/projects" class="nav-link">مشاريعي</a></li>
       <li  class="nav-item active" ><a title="Post New" href="/projects/new" class="nav-link">إضافة مشروع</a></li>
 <% if(currentUser){%>
+  <div style="padding-left: 20px;">
+    <li class="nav-item active">
 <a class="btn btn-outline-success"  href="/users/logout" ><%=currentUser.name%></a>
+</li>
+  </div>
 <%}else{%>
 
- <div style="padding-left: 20px;">
-<a class="btn btn-outline-info my-2 my-sm-0"" href="/users/signIn">انشاء حساب</a>
-</div>
-<div>
-<a class="btn btn-outline-info my-2 my-sm-0"" href="/users/login">تسجيل الدخول</a>
-</div>
+  <li class="nav-item active">
+<a class="nav-link" href="/users/signIn">انشاء حساب</a>
+  </li>
+  <li class="nav-item active">
+<a class="nav-link" href="/users/login">تسجيل الدخول</a>
+  </li>
 
 <% } %>
     </ul>
