@@ -3,10 +3,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+  
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
 
 
    <title>الرئيسية - تعاون</title>
@@ -19,36 +17,50 @@
     <p>تجمع بين رواد الأعمال والشركات مع طلاب السنة الأخيرة</p>
 <p>يتم ذلك من خلال طرح مشاريع ليتم تنفيذها من قبل الطلاب</p>
   </div>
+  <h1 style="text-align: center;">خطوات سير العمل</h1>
 
-  <br></br>
-  <div class="container">
-    <h1 style="text-align: center;">خطوات سير العمل</h1>
-    <div class="row">
-      <div class="col-sm-3">
-        <h3>إنشاء حساب</h3>
-        <p>بعد إنشاء حساب في نظام تعاون</p>
-        <p>يمكنك تسجيل الدخول عن طريق اسم المستخدم وكلمة المرور</p>
-      </div>
+  <!-- Horizontal Steppers -->
+<div class="row">
+    <!-- Stepers Wrapper -->
+    <ul class="stepper stepper-horizontal">
+      <!-- First Step -->
+      <li class="completed">
+        <a href="#!">
+          <span class="circle">١</span>
+          <span class="label">إنشاء حساب</span>
+          <p>بعد إنشاء حساب في نظام تعاون يمكنك تسجيل الدخول عن طريق اسم المستخدم وكلمة المرور</p>
+        </a>
+      </li>
 
-      <div class="col-sm-3">
-        <h3>إضافة فكرة مشروع</h3>
-        <p>نشر المشروع عن طريق تعبئة القالب المطلوب</p>
-      </div>
+      <!-- Second Step -->
+      <li class="active">
+        <a href="#!">
+          <span class="circle">٢</span>
+          <span class="label">إضافة فكرة مشروع</span>
+          <p>نشر المشروع عن طريق تعبئة القالب المطلوب بعد نشر مشروعك ستستلم طلبات طلاب الجامعة لتنفيذ المشروع</p>
 
-      <div class="col-sm-3">
-        <h3>استقبال طلبات تنفيذ المشروع</h3>        
-        <p>بعد نشر مشروعك</p>
-        <p>ستستلم طلبات طلاب الجامعة لتنفيذ المشروع</p>
-      </div>
+        </a>
+      </li>
 
-      <div class="col-sm-3">
-        <h3>اختيار المجموعة المناسبة والبدء في تنفيذ المشروع</h3>        
-        <p> بعد اختيار المجموعة المناسبة يبدأ تنفيذ المشروع</p>
-        <p>سيتم جدولة اجتماعات دورية مع مشرف المشروع من الجامعة</p>
-      </div>
-    </div>
-  </div>
-  <br></br>
+      <!-- Third Step -->
+      <li class="active">
+        <a href="#!">
+          <span class="circle">٣</span>
+          <span class="label">اختيار المجموعة المناسبة </span>
+          <p> بعد اختيار المجموعة المناسبة يبدأ تنفيذ المشروع سيتم جدولة اجتماعات دورية مع مشرف المشروع من الجامعة</p>
+        </a>
+      </li>
+
+    </ul>
+    <!-- /.Stepers Wrapper -->
+
+</div>
+
+
+      
+
+                                                                                   
+
                 <h5>المشاريع المضافة</h5>                                                                   
                 <% projects.forEach(project => {    %>
                 <div class="card section-vbox padd20" style="text-align: center;">
