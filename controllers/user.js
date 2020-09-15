@@ -208,7 +208,6 @@ authenticate: passport.authenticate('local',{
 
     },
     showProjects:(req, res) =>{
-        //res.send('show user method');
  Project.find({userId:req.params.uid})
  .then(projects => {
      res.locals.projects=projects;

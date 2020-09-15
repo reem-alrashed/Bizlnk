@@ -136,13 +136,13 @@ let currentDate= year + "-" + month + "-" + date + " " + hours + ":" + minutes +
                 first.save(function (err) {
                     if (err){
                         req.flash('error','Error adding project');
-                        res.render("project/index")
+                        res.redirect("project/index")
                         next(error);
                     }
 
                     else{ 
                         req.flash('success','تمت اضافة المشروع بنجاح');
-                        res.render("project/index")
+                        res.redirect("project/index")
                         next() }
 
                   }) },

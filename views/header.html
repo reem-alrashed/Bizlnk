@@ -1,29 +1,28 @@
-<div class="header py-3">
-    <nav class="navbar navbar-expand navbar-light static-top">
-   <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding: 10px;">
      <a class="navbar-brand" href="/projects/home">تعاون</a>
-     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-           <span class="navbar-toggler-icon"></span>
-         </button>
+  
      <div class="collapse navbar-collapse" >
        <ul class="navbar-nav" style="float: center; ">
-           <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-505" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-505 nav-item"><a title="Project Search" href="/projects/search"  class="nav-link">أفكار مشاريع</a></li>
-           <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-510" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-510 nav-item"><a title="My Account" href="/users" class="nav-link">المستخدمين</a></li>
-           <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-510" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-510 nav-item"><a title="My Account" href="/projects" class="nav-link">المشاريع</a></li>
-           <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-510" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-510 nav-item"><a title="My Account" href="/users/5f563202d326f90fc208351e/profile" class="nav-link">حسابي</a></li>
-           <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-510" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-510 nav-item"><a title="My Account" href="/users/5f563202d326f90fc208351e/projects" class="nav-link">مشاريعي</a></li>
-           <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-512" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-512 nav-item"><a title="Post New" href="/projects/new" class="nav-link">إضافة مشاريع</a></li>
-<li class="nav-item" >
-</li>
-<li class="nav-item">
-  <% if(currentUser){%>
-    <a class="btn btn-primary btn-sm " href="/users/logout"><%=currentUser.name%></a></li>
+           <li class="nav-item active"><a title="Project Search" href="/projects/search"  class="nav-link">أفكار مشاريع</a></li>
+           <li  class="nav-item active"> <a href="/users" class="nav-link">المستخدمين</a></li>
+           <li class="nav-item active"><a title="My Account" href="/projects" class="nav-link">المشاريع</a></li>
+           <li  class="nav-item active" ><a title="My Account" href="/users/5f563202d326f90fc208351e/profile" class="nav-link">حسابي</a></li>
+           <li  class="nav-item active"><a title="My Account" href="/users/5f563202d326f90fc208351e/projects" class="nav-link">مشاريعي</a></li>
+           <li  class="nav-item active" ><a title="Post New" href="/projects/new" class="nav-link">إضافة مشروع</a></li>
+<% if(currentUser){%>
+    <a class="btn btn-outline-success"  href="/users/logout" ><%=currentUser.name%></a>
     <%}else{%>
-      <a class="btn btn-primary btn-sm " href="/users/signIn">انشاء حساب</a>
-    <a class="btn btn-primary btn-sm " href="/users/login">تسجيل الدخول</a></li>
-   <%}%>
+      <div style="padding-left: 10px;">
+  <a class="btn btn-outline-primary" href="/users/signIn">انشاء حساب</a>
+</div>
+<div>
+  <a class="btn btn-outline-primary" href="/users/login">تسجيل الدخول</a>
+</div>
+
+    <% } %>
+   
+          
        </ul>
      </div>
-   </div>
  </nav>
 </div>

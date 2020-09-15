@@ -11,7 +11,6 @@ const connectflash = require('connect-flash')
 const User = require('./models/user');
 
 
-
 app = express(); 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/Taawon',{
@@ -19,7 +18,7 @@ mongoose.connect('mongodb://localhost:27017/Taawon',{
 });
 
 
-app.set('port',process.env.process||3000);
+app.set('port',3000);
 app.set('view engine','ejs');
 app.use(layouts);
 app.use(express.static('public'));
@@ -32,11 +31,9 @@ app.use(express.json());
 
 app.use(cookieParser('team'))
 app.use(expressSession ({
-
-    key: 'user_sid',
     secret: 'team',
     saveUninitialized: true,
-    resave: true,
+    resave: false,
  saveUninitialized:false ,
  cookie: {maxAge: 6000}}))
 
@@ -54,32 +51,30 @@ passport.deserializeUser(User.deserializeUser());
 app.use(connectflash());
 
 
-app.use((req , res , next) => {
+ app.use((req , res , next) => {
 res.locals.flashMessages= req.flash(); 
 res.locals.loggedIn = req.isAuthenticated();
 if(req.isAuthenticated()){
     req.session.currentUser = req.user
-    res.locals.currentUser= req.session.currentUser;
+   res.locals.currentUser= req.session.currentUser;
 
 }else{
     res.locals.currentUser = undefined
 }
-next();
-})
+next()
+ }) 
 
-app.use((req,res)=>{
+app.use((req,res,next)=>{
     if(req.session.currentUser){
         console.log(req.session.currentUser)
     }
+    next();
 })
 
-  
 
 app.use('/',router);
 
 
-app.listen(app.get('port'),()=>{ //'ctrl + c' to close the port 
-      console.log('express has started..!');
+app.listen(app.get('port'),()=>{ 
+      console.log('Express has started..');
 });
-
-
