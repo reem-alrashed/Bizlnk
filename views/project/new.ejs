@@ -6,33 +6,24 @@
     }
   </style>
 </head>
-<body class="page-template page-template-post-new-page-template page-template-post-new-page-template-php page page-id-11 logged-in elementor-default"> 
-          <div class="flex-fill">
-                  <div class="header py-3">                         
-          <div id="project-theme-page-template-1">
-<div class="page_heading_me pt_template_page_1" id="pt_template_page_1">
-<div class="page_heading_me_inner">
-<div class="col-sm-12" id="x_templ_1_pt">
-  <div class="mm_inn">اضافة مشروع</div></div>    
-</div>
-</div>
-<div class="row" style="text-align: right;font-size: 25px;">
-<div id="content" >
-      <div class="card p-3">
-        
-              <div class="sonita2">
+<body > 
+          <div class="container">
+                <br/>
+            <div id="h1"class="p-3 mb-2 bg-light text-dark"> اضافة مشروع</div>
+
+
 <form method="post" action="/projects/create">
-<ul class="post-new">
-  <li class="">
-      <h2>عنوان المشروع</h2>
-      <p><input type="text" size="50" class="form-control" name="title" placeholder="عنوان المشروع" ></p>
-  </li>
-                   <li class="">   
-      <h2>وصف المشروع</h2>
-  <p><textarea rows="6" cols="60" class="form-control" placeholder="وصف للمشروع" name="description"></textarea></p>
-  </li>
-          <li class="">
-                      <h2>التصنيفات</h2>
+  <div class="form-group" dir="rtl" align="right" >
+    <label for="name">عنوان المشروع</label>
+          <input type="text" class="form-control" name="name" placeholder="عنوان المشروع" >
+           </div>
+           <div class="form-group" dir="rtl" align="right" >
+            <label for="name">وصف المشروع</label>
+            <textarea rows="6" cols="60" class="form-control" placeholder="وصف للمشروع" name="description"></textarea>
+           </div>     
+                <div class="form-group" dir="rtl" align="right" >
+                  <label for="name">مجال المشروع</label>
+
                   <div class="multi_cat_placeholder_thing">
           <input type="checkbox" name="type" value="برمجة تطبيقات الويب" name="project_cat_cat_multi[]"> برمجة تطبيقات الويب<br>
           <input type="checkbox" name="type"value="برمجة تطبيقات الجوال" name="project_cat_cat_multi[]"> برمجة تطبيقات الجوال<br>
@@ -41,26 +32,20 @@
           <input type="checkbox" name="type"value="علوم البيانات" name="project_cat_cat_multi[]"> علوم البيانات<br> 
 
       </div>
-  </li>
-  <li>
-      <h3>المهارات المطلوبة</h3>
-      <p><input type="text" size="50" class="form-control" name="requiredSkills" placeholder="المهارات المطلوبة" ></p>
-  </li>
-  <li class="">                  
- <h2>ميزانية المشروع</h2>
-  <p class="strom_100">
+                </div>
+                <div class="form-group" dir="rtl" align="right" >
+
+                  <label for="name"> المهارات المطلوبة</label>
+      <input type="text" size="50" class="form-control" name="requiredSkills" placeholder="المهارات المطلوبة" >
+                </div>
+                <div class="form-group" dir="rtl" align="right" >
+                  <label for="name">  ميزانية المشروع</label>
 <input type="number" required="" size="50" class="form-control" name="budget" placeholder="الميزانية بالريال السعودي" value="10000">
-</p>
-  </li>
-  <li class="">                  
-   
-     </li>
-  <li>
-  
-  <p>
+                </div>
+ 
+ 
     <button type="submit" class="btn btn-primary" align="left">إضافة</button>
-  </li>       
-</ul>
+
 </form>
 </div>   
         </div>

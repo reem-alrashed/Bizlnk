@@ -196,7 +196,7 @@ authenticate: passport.authenticate('local',{
     },
     showProfile:(req, res) =>{
            //res.send('show user method');
-    User.findOne({_id:req.params.uid})
+    User.findOne({_id:"5f60d43cb2534f1972c0a951"})
     .then(user => {
         res.locals.user=user;
         console.log(user);
@@ -208,7 +208,7 @@ authenticate: passport.authenticate('local',{
 
     },
     showProjects:(req, res) =>{
- Project.find({userId:req.params.uid})
+ Project.find({userId:"5f60d43cb2534f1972c0a951"})
  .then(projects => {
      res.locals.projects=projects;
      console.log(projects);

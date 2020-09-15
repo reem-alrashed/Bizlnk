@@ -25,9 +25,7 @@
              <thead>
                  <tr style="color:black">
                      <th scope="col" id="title" class="text-center"> عنوان</th>
-                     <th scope="col" id="author" class="text-center">وصف</th>	
                      <th scope="col" id="author" class="text-center">صاحب المشروع</th>	
-                     <th scope="col" id="author" class="text-center">تاريخ اضافة المشروع</th>	
                      <th scope="col" id="author" class="text-center">الميزانية</th>	
                      <th scope="col" id="options" class="text-center">العمليات</th>	
                     </tr>
@@ -36,9 +34,7 @@
                     <tbody id="the-list">	
                         <tr>
                             <td > <strong><%= project.title %></strong> </td>
-                            <td class="author column-author" data-colname="Author"><%= project.description %></td>
                             <td > <strong><%= project.userId.name %></strong> </td>
-                                        <td class="author column-author" data-colname="Author"><%= project.postedDate %></td>
                                         <td class="author column-author" data-colname="Author"><%= project.budget %></td>
                                         <td>
                                     <div ><a class="awesome" href="/projects/<%= project._id %>/edit"">تعديل</a> 

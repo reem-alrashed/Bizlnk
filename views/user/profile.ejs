@@ -1,28 +1,16 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 
-<div class="container emp-profile" style="text-align: right;">
-    <div class="page_heading_me pt_template_page_1" id="pt_template_page_1">
-        <div class="page_heading_me_inner">
-        <div class="col-sm-12" id="x_templ_1_pt">
-          <div class="mm_inn">حسابي</div></div>    
-        </div>
-        </div>
+          <div class="container"> 
+            <div id="h1"class="p-3 mb-2 bg-light text-dark">حسابي</div>
+            <br/>
+  
         <br/>
         <br/>
-                <div class="row">
-                
-                    <div class="col-md-8">
-                        <div class="tab-content profile-tab" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <br><br>
+      
                                 <form method="POST" action="/users/<%= user._id %>/edit?_method=PUT">
                                     <div class="form-group" dir="rtl" align="right" >
                                       <label for="name">اسم المستخدم</label>
                                       <input type="text" class="form-control" name="name" value="<%= user.name %>" placeholder="اسم المستخدم" aria-describedby="emailHelp">
-                                   
+                                    </div>
                                     
                                     <div class="form-group" dir="rtl" align="right" >
                                       <label for="email">البريد الإلكتروني</label>
