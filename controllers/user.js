@@ -31,7 +31,7 @@ new : (req , res ) =>{
     res.render('user/new')
     },
     insert:(req , res,next) => {
-  let newUser= User.insertMany({
+  let newUser= new User({
     name : req.body.name ,
     email : req.body.email ,
     field :  "تقنية",
@@ -39,20 +39,21 @@ new : (req , res ) =>{
     userType: req.body.gridRadios  
     })
        
-User.register(newUser, req.body.password, (error, user) =>{
-        if(user){
-            req.flash('success', 'تم حفظ البيانات بنجاح');
-            res.locals.redirect = '/users';
-            next();
-        }else{
-            req.flash('error', `الرجاء التحقق من البيانات`);
-            res.locals.redirect = '/users/new';
-            next();
-        }
-    });
-    req.flash('success' ,  ' تم اضافه المستخدم بنجاح !')
-    res.redirect('/users')
-    },findOne: (req,res)=>{
+        User.register(
+            User.register(newUser, req.body.password, (error, user) =>{
+                if(user){
+                    req.flash('success', 'تم حفظ البيانات بنجاح');
+                    res.redirect('/users');
+                }else{
+                    req.flash('error', `الرجاء التحقق من البيانات`);
+                    res.redirect ('/users/new');
+                }
+            })
+        ) }
+ ,
+
+    
+    findOne: (req,res)=>{
         User.findById({_id:req.params.id})
         .then(user => {
             res.locals.user=user;
@@ -154,8 +155,8 @@ login:(req,res,next)=>{
 
 },
 authenticate: passport.authenticate('local',{
-    successRedirect: '/users',
-    successFlash: 'تم تسجيل الدخول بنجاح',
+    successRedirect: '/projects/home',
+    successFlash: ' تم تسجيل الدخول بنجاح، مرحباً بك في نظام تعاون',
     failureRedirect: '/users/login',
     failureFlash: 'الرجاء التحقق من بيانات الدخول'
 }),

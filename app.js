@@ -30,11 +30,14 @@ app.use(methodOverride('_method',{methods:['POST','GET']}));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
-app.use(cookieParser('gorgoues team'))
+app.use(cookieParser('team'))
 app.use(expressSession ({
-    secret: 'gorgoues team'
-    ,resave: false
- ,saveUninitialized:false ,
+
+    key: 'user_sid',
+    secret: 'team',
+    saveUninitialized: true,
+    resave: true,
+ saveUninitialized:false ,
  cookie: {maxAge: 6000}}))
 
 
@@ -50,19 +53,27 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use(connectflash());
 
+
 app.use((req , res , next) => {
 res.locals.flashMessages= req.flash(); 
 res.locals.loggedIn = req.isAuthenticated();
-res.locals.currentUser= req.user;
+if(req.isAuthenticated()){
+    req.session.currentUser = req.user
+    res.locals.currentUser= req.session.currentUser;
+
+}else{
+    res.locals.currentUser = undefined
+}
 next();
 })
 
-app.use((req,res,next)=>{
-    if(req.session.user){
-        console.log(req.session.user)
+app.use((req,res)=>{
+    if(req.session.currentUser){
+        console.log(req.session.currentUser)
     }
-next()
 })
+
+  
 
 app.use('/',router);
 
