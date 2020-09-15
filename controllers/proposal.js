@@ -18,27 +18,39 @@ module.exports={
        })
         },
        submitProposal:function(req, res){
-           const proposal = new Proposal({
-               userId:req.params.uid,
-              projectId:req.params.pid
-       })
-       proposal.save(function (err) {
-              if (err){
-                  req.flash('error','Error adding proposal');
-                  res.render("project/search")
-
-              }
-              else{ 
-                  req.flash('success','تم تسليم العرض بنجاح');
-                  res.render("project/search")
-                 }
-       
+           let p=0;
+         Proposal.find({userId:req.params.uid,
+            projectId:req.params.pid}).then(proposals=>{
+                console.log(proposals)
+                p=proposals.length
             })
-       },
-       approveProposal:(req,res)=>{
+            if(p==0){
+                const proposal = new Proposal({
+                    userId:req.params.uid,
+                   projectId:req.params.pid
+            })
+            proposal.save(function (err) {
+                   if (err){
+                       req.flash('error','Error adding proposal');
+                       res.redirect("/projects/search")
+     
+                   }
+                   else{ 
+                       req.flash('success','تم تسليم العرض بنجاح');
+                       res.redirect("/projects/search")
+                      }
+            
+                 })
+                }
+                 else{
+                    req.flash('error','لقد قمت بتسليم العرض مسبقاً');
 
+                 }
+            
+           
        },
-       
+      
+
        
 
 }

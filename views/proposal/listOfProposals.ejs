@@ -4,15 +4,13 @@
 <title>عروض المشاريع</title>
 <form method="POST" action=""> 
 
-    <div class="list-group">
+    <div class="list-group" align="right">
    
       <% users.forEach(user => { %>
 
     <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
       <div class="d-flex w-100 justify-content-between">
-        <div class="form-check">
-          <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
-        </div>
+        
         <h5 class="mb-1"><%= user.name %></h5>
       </div>
       <p class="mb-1"><%= user.email %></p>

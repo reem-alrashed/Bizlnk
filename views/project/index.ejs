@@ -68,12 +68,12 @@
                      <th scope="col" id="options" class="text-center">العمليات</th>	
                     </tr>
                 </thead>
-                <% projects.forEach(project => {  users.forEach(user => { %>
+                <% projects.forEach(project => {   %>
                     <tbody id="the-list">	
                         <tr>
                             <td > <strong><%= project.title %></strong> </td>
                             <td class="author column-author" data-colname="Author"><%= project.description %></td>
-                            <td > <strong><%= user.name %></strong> </td>
+                            <td > <strong><%= project.userId.name %></strong> </td>
                                         <td class="author column-author" data-colname="Author"><%= project.postedDate %></td>
                                         <td class="author column-author" data-colname="Author"><%= project.budget %></td>
                                         <td>
@@ -85,7 +85,7 @@
                             </tr>
                             
                         </tbody>
-                        <%})%>  
+                    
                         <%})%>        
                     </table>	
                 </form>
