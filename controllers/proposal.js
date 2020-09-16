@@ -18,37 +18,26 @@ module.exports={
        })
         },
        submitProposal:function(req, res){
-           let p=0;
-         Proposal.find({userId:req.params.uid,
-            projectId:req.params.pid}).then(proposals=>{
-                console.log(proposals)
-                p=proposals.length
-            })
-            if(p==0){
-                const proposal = new Proposal({
+      
+                let proposal = new Proposal({
                     userId:req.params.uid,
                    projectId:req.params.pid
-            })
-            proposal.save(function (err) {
-                   if (err){
-                       req.flash('error','Error adding proposal');
-                       res.redirect("/projects/search")
-     
-                   }
-                   else{ 
+                })
+                   proposal.save(function (err) {
+                //    if (err){
+                //        req.flash('error','Error adding proposal');
+                //        res.redirect("/projects/search")
+                //    }
+                //    else{ 
                        req.flash('success','تم تسليم العرض بنجاح');
                        res.redirect("/projects/search")
-                      }
+                  //    }
             
                  })
                 }
-                 else{
-                    req.flash('error','لقد قمت بتسليم العرض مسبقاً');
-
-                 }
-            
+              
            
-       },
+       
       
 
        

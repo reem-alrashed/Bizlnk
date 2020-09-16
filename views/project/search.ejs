@@ -43,8 +43,12 @@ body{
                 <p class="card-text"> <%= project.description %> </p>
                 <p class="card-text">أنشئ بواسطة:  <%= project.userId.name %> </p>
                 <p class="btn btn-info"> <%= project.budget %> ريال سعودي </p>  
-                <p class="btn btn-info"> <%= project.postedDate %></p> 
-                
+                <p class="btn btn-info"> <%= project.postedDate %></p> <br>
+                <% if(loggedIn){%>
+                    <form method="POST" action="/proposals/<%= currentUser._id %> /<%= project._id %>/submit">
+                    <button class="btn btn-info" type="submit">تقديم عرض</button>
+                </form>
+                <% }%>
               </div>
             </div>
      
