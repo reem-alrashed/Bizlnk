@@ -8,30 +8,25 @@
   
   </style>        
   <br/>     
-<div class="container"> 
+<div class="container" style="text-align: right;"> 
     <div id="h1"class="p-3 mb-2 bg-light text-dark">مشاريعي</div>
     <br/>
-                                                    
-                <% projects.forEach(project => {   %>
-                    <div class="card section-vbox padd20" align="right">
-    
-                        <div class="row">
-                            <div class="project-title-list col-sm-12 col-md-12"> <h4><%= project.title %>
-     
-                                
-                            </h4> </div>
-                        </div>
-    
-                                <div class="d-lg-flex flex-row user-meta-data-row" style="padding: 10px;">
-                                    <div class="project-title-list col-sm-12 col-md-12"  style="padding: 10px;"> 
-                                        <h4><%= project.description %> <br/>
-                                            <i class="fas fa-money-bill-alt"> <%= project.budget %> </i>  <br/>
-                                            <i class="fa fa-calendar"> <%= project.postedDate %></i>  <br/>
-                                            <i class="fas fa-user-tag"> 0 proposals</i> </h4> <br/>
-                                            <a href="/proposals/<%=project._id%>/show">العروض</a>
+                     
+<% if(typeof(projects)!='undefined') { %>
+                                                                       
+    <div class="card">
+    <div class="card-body">
+      <% projects.forEach(project => {    %>
+      <h4 class="card-title"><%= project.title %></h4>
+      <p class="card-text"> <%= project.description %> </p>
+      <p class="card-text">أنشئ بواسطة:  <%= project.userId.name %> </p>
+      <p class="btn btn-info"> <%= project.budget %> ريال سعودي </p>  
+      <p class="btn btn-info"> <%= project.postedDate %></p> <br/>
+      <a  class="btn btn-info" shref="/proposals/<%=project._id%>/show">العروض</a>
+    </div>
+</div>
+<%}) }%>                   
                                         </div>
                                 </div>
      
-    </div>
-                           <%})%>  
-                  
+    </div>                  

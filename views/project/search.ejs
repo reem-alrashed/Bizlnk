@@ -13,11 +13,8 @@ body{
 
 
 </head>
-   <body class="page-template page-template-project-special-page-template page-template-project-special-page-template-php page page-id-8 logged-in elementor-default"> 
-       <div class="page">
-               <div class="flex-fill">
-                       <div class="header py-3">
-               <div id="project-theme-page-template-1">
+   <body > 
+              
                    <br/> 
                    
                    <div class="container" dir="rtl" align="right" dir="rtl" align="right" >
@@ -37,51 +34,28 @@ body{
     <%}) %>  
 <br><br>
 
-<% if(typeof(projects)!='undefined') { projects.forEach(project => { %>
-    <form  method="POST">
-                                                                  
-        <div class="card section-vbox padd20">
-
-
-       
-        <div class="card">
-            <div class="card section-vbox padd20">
-            <div class="row">
-                <br></br>
-                <div class="card-body">
-                <div class="project-title-list col-sm-20 col-md-20"> <h4><%= project.title %></h4></div>
-           
-            
-                    <% projects.forEach(project => {    %>
-                    <p class="card-text"> <%= project.description %> </p>
-                    <p class="card-text">أنشئ بواسطة:  <%= project.userId.name %> </p></div>
-                </div>
-                <a  class="btn btn-info"> <%= project.budget %> ريال سعودي </a>
-                <a  class="btn btn-info"> <%= project.postedDate %> </a>
- 
-                    <% if(loggedIn){%>
-                        <a href="/proposals/<%= currentUser._id %> /<%= project._id %>/submit">تقديم عرض</a>
-                    <% }%>
-
-                    <%})%>  
-                </div>   
-            </div>   
-        </div>  </div>
-    </div>
-
-</div>
-               <%})%>  
-
-    <% } %>  
-</form>
-
-
+<% if(typeof(projects)!='undefined') { %>
+                                                                       
+              <div class="card">
+              <div class="card-body">
+                <% projects.forEach(project => {    %>
+                <h4 class="card-title"><%= project.title %></h4>
+                <p class="card-text"> <%= project.description %> </p>
+                <p class="card-text">أنشئ بواسطة:  <%= project.userId.name %> </p>
+                <p class="btn btn-info"> <%= project.budget %> ريال سعودي </p>  
+                <p class="btn btn-info"> <%= project.postedDate %></p> 
+                <% if(loggedIn){%>
+                    <a href="/proposals/<%= currentUser._id %> /<%= project._id %>/submit">تقديم عرض</a>
+                <% }%>
+                
+              </div>
+            </div>
+     
+        <%}) }%>                                                
+      
                </div>
            </div>
            </div>
 
 </div></div>
-</div>
-</div> 
-</div>
-<div id="a11y-speak-polite" class="a11y-speak-region" style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;" aria-live="polite" aria-relevant="additions text" aria-atomic="true"></div><div id="a11y-speak-assertive" class="a11y-speak-region" style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;" aria-live="assertive" aria-relevant="additions text" aria-atomic="true"></div><!----></body></html>
+   </body>
