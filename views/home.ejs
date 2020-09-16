@@ -52,28 +52,22 @@
 
 </div>
 
-
-      
-
-<div class="container"> 
-  <div id="h1"class="p-3 mb-2 bg-light text-dark">المشاريع المضافة</div>
-  <br/>                                                                   
-                                                            
-
-                <% projects.forEach(project => {    %>
-                <div class="card section-vbox padd20" style="text-align: center;">
-                    <div class="row">
-                  <div class="project-title-list col-sm-12 col-md-12"> <h4><%= project.title %>       </h4> </div>
-                    </div>
-                            <div class="d-lg-flex flex-row user-meta-data-row" style="padding: 10px;">
-                                <div class="project-title-list col-sm-12 col-md-12"  style="padding: 10px;"> 
-                                    <h4><%= project.description %> <br/>
-                                         Created by <%= project.userId.name %> <br/>
-                                        <i class="fas fa-money-bill-alt"> <%= project.budget %> </i>  <br/>
-                                        <i class="fa fa-calendar"> <%= project.postedDate %></i>  <br/>
-                                        <i class="fas fa-user-tag"> 0 proposals</i> </h4> </div>
-                            </div> </div>
-                       <%})%>    
+<div class="container" dir="rtl" align="right" dir="rtl" align="right" >
+    <div id="h1"class="p-3 mb-2 bg-light text-dark">المشاريع المضافة</div>
+    <br></br>                                                                   
+      <div class="card">
+      <div class="card-body">
+        <% projects.forEach(project => {    %>
+        <h4 class="card-title"><%= project.title %></h4>
+        <p class="card-text"> <%= project.description %> </p>
+        <p class="card-text">أنشئ بواسطة:  <%= project.userId.name %> </p>
+        <p class="btn btn-info"> <%= project.budget %> ريال سعودي </p>  
+        <p class="btn btn-info"> <%= project.postedDate %></p> 
+        
+      </div>
+    </div>
+</div>   
+<%})%>    
 
                   <br></br>
          <div class="see-all" style="text-align: center;"><a class="btn btn-info" > البحث عن مشاريع أخرى</a>
