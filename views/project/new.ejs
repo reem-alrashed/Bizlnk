@@ -12,7 +12,7 @@
             <div id="h1"class="p-3 mb-2 bg-light text-dark"> اضافة مشروع</div>
 
 
-<form method="post" action="/projects/create">
+<form method="post" action="/projects/create/<%= currentUser._id %>">
   <div class="form-group" dir="rtl" align="right" >
     <label for="name">عنوان المشروع</label>
           <input type="text" class="form-control" name="name" placeholder="عنوان المشروع" >

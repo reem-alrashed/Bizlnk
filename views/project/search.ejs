@@ -41,7 +41,7 @@ body{
 
 
 <% if(typeof(projects)!='undefined') { projects.forEach(project => { %>
-    <form action="/proposals/5f6064815c43d7068649d444/<%= project._id %>/submit" method="POST">
+    <form action="/proposals/<%= currentUser._id %> /<%= project._id %>/submit" method="POST">
                                                                   
         <div class="card section-vbox padd20">
 
