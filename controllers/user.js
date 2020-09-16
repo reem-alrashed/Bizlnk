@@ -182,7 +182,7 @@ authenticate: passport.authenticate('local',{
     logout: (req, res, next) =>{
         req.logout();
         req.flash('success', 'تم تسجيل الخروج بنجاح');
-        res.locals.redirect = '/users';
+        res.locals.redirect = '/projects/home';
         next();
     },
     restrictAdmin: (req, res, next) =>{

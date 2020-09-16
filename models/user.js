@@ -14,7 +14,6 @@ UserSchema = new Schema({
         trim: true,
         required:true
     },
-    isAdmin: Boolean,
     field:{
         type: String,
         trim: true,

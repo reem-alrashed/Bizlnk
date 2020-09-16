@@ -30,12 +30,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
 app.use(cookieParser('team'))
-app.use(expressSession ({
-    secret: 'team',
-    saveUninitialized: true,
-    resave: false,
- saveUninitialized:false ,
- cookie: {maxAge: 6000}}))
+app.use(expressSession ({secret: 'team'}))
 
 
 /* Passport */
@@ -54,27 +49,25 @@ app.use(connectflash());
  app.use((req , res , next) => {
 res.locals.flashMessages= req.flash(); 
 res.locals.loggedIn = req.isAuthenticated();
-if(req.isAuthenticated()){
-    req.session.currentUser = req.user
-   res.locals.currentUser= req.session.currentUser;
-
-}else{
-    res.locals.currentUser = undefined
-}
+//if(req.isAuthenticated()){
+   res.locals.currentUser= req.user;
+  // res.locals.currentUser= req.session.currentUser;
+//}
+//else{
+  //  res.locals.currentUser = undefined
+//}
 next()
  }) 
-
-app.use((req,res,next)=>{
-    if(req.session.currentUser){
-        console.log(req.session.currentUser)
-    }
-    next();
-})
 
 
 app.use('/',router);
 
-
+ app.use((req,res,next)=>{
+    if(req.session.user){
+        console.log(req.session.user)
+    }
+    next()
+})
 app.listen(app.get('port'),()=>{ 
       console.log('Express has started..');
 });
