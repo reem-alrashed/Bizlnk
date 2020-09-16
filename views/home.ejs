@@ -1,12 +1,5 @@
 <html lang="ar" dir="rtl"><head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  
-<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
-
-
    <title>الرئيسية - تعاون</title>
  
 </head>
@@ -26,7 +19,7 @@
     <!-- Stepers Wrapper -->
     <ul class="stepper stepper-horizontal">
       <!-- First Step -->
-      <li class="completed">
+      <li class="info">
         <a href="#!">
           <span class="circle">١</span>
           <span class="label">إنشاء حساب</span>
@@ -35,7 +28,7 @@
       </li>
 
       <!-- Second Step -->
-      <li class="active">
+      <li class="info">
         <a href="#!">
           <span class="circle">٢</span>
           <span class="label">إضافة فكرة مشروع</span>
@@ -45,7 +38,7 @@
       </li>
 
       <!-- Third Step -->
-      <li class="active">
+      <li class="info">
         <a href="#!">
           <span class="circle">٣</span>
           <span class="label">اختيار المجموعة المناسبة </span>
@@ -64,13 +57,13 @@
 <div class="container"> 
   <div id="h1"class="p-3 mb-2 bg-light text-dark">المشاريع المضافة</div>
   <br/>                                                                   
+                                                            
 
                 <% projects.forEach(project => {    %>
                 <div class="card section-vbox padd20" style="text-align: center;">
                     <div class="row">
                   <div class="project-title-list col-sm-12 col-md-12"> <h4><%= project.title %>       </h4> </div>
                     </div>
-
                             <div class="d-lg-flex flex-row user-meta-data-row" style="padding: 10px;">
                                 <div class="project-title-list col-sm-12 col-md-12"  style="padding: 10px;"> 
                                     <h4><%= project.description %> <br/>
@@ -82,23 +75,23 @@
                        <%})%>    
 
                   <br></br>
-         <div class="see-all-freelancers" style="text-align: center;"><a class="btn btn-info btn-lg" > البحث عن مشاريع أخرى</a>
+         <div class="see-all" style="text-align: center;"><a class="btn btn-info" > البحث عن مشاريع أخرى</a>
         <br></br>
         <h5>الداعمين للمنصة</h5><div class="row" id="freelancers-widget"></div>	
 
-           <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+           <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
            <div class="card lift mb-3 card-of-user  " id="user-box-8" style="height: 345px;"> 
             <div class="card-body text-center ">
                <div class="title"><h4>الاتحاد السعودي للأمن السيبراني والبرمجة والدرونز</h4></div>
                 </div></div></div>
 
-            <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                 <div class="card lift mb-3 card-of-user" id="user-box-3" style="height: 345px;"> 
                  <div class="card-body text-center ">
-                <div class="title"><h4>جامعة الأميرة نورة بنت عبدالرحمن</h4></div>      
+                <div class="title"><h4>جامعة الأميرة نورة بنت عبدالرحمن</h4></div>  
                 </div></div></div></div>
 <br></br>
-       </div><div class="see-all-freelancers" style="text-align: center;" ><a class="btn btn-info btn-lg" > البحث عن شركات أخرى</a></div>
+       </div><div class="see-all" style="text-align: center;" ><a class="btn btn-info" > البحث عن شركات أخرى</a></div>
        <br></br>   </div>   </div></div> </div></div>
                  </div>  </div>
        </section>
