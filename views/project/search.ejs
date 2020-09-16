@@ -38,7 +38,7 @@ body{
 <br><br>
 
 <% if(typeof(projects)!='undefined') { projects.forEach(project => { %>
-    <form action="/proposals/<%= currentUser._id %> /<%= project._id %>/submit" method="POST">
+    <form  method="POST">
                                                                   
         <div class="card section-vbox padd20">
 
@@ -59,7 +59,10 @@ body{
 
                     <button type="submit" class="btn btn-info" align="right"> <%= project.budget %> ريال سعودي </button>  
                     <button type="submit" class="btn btn-info" align="right"> <%= project.postedDate %></button>  
-                    <button type="submit" class="btn btn-info" align="left"> تقديم عرض</button>
+                    <% if(loggedIn){%>
+                        <a href="/proposals/<%= currentUser._id %> /<%= project._id %>/submit">تقديم عرض</a>
+                    <% }%>
+
                     <%})%>  
                 </div>   
             </div>   
