@@ -18,11 +18,11 @@ body{
                <div class="flex-fill">
                        <div class="header py-3">
                <div id="project-theme-page-template-1">
-                <br/> 
-
-                <div class="container">
-                    <div id="h1"class="p-3 mb-2 bg-light text-dark">المشاريع</div>
-                    <br/>
+                   <br/> 
+                   
+                   <div class="container" dir="rtl" align="right" dir="rtl" align="right" >
+                       <div id="h1"class="p-3 mb-2 bg-light text-dark">المشاريع</div>
+                       <br></br>                                                                   
 
 <div class="container mt-3">
 <div class="row">
@@ -31,37 +31,40 @@ body{
    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
 <% projects.forEach(project => { %>
-<div align="right" dir="rtl">
-    <a href="/projects/search/<%= project._id %>"> <button type="button" class="btn btn-info">
-            <%= project.type %>
-      </button> </a>
+<div align="left" dir="rtl">
+    <a href="/projects/search/<%= project._id %>"> <button type="button" class="btn btn-info"><%= project.type %></button></a>
     </div>
     <%}) %>  
 <br><br>
-
 
 <% if(typeof(projects)!='undefined') { projects.forEach(project => { %>
     <form action="/proposals/<%= currentUser._id %> /<%= project._id %>/submit" method="POST">
                                                                   
         <div class="card section-vbox padd20">
 
+
+       
+        <div class="card">
+            <div class="card section-vbox padd20">
             <div class="row">
-                <div class="project-title-list col-sm-12 col-md-12"> <h4><%= project.title %>
+                <br></br>
+                <div class="card-body">
+                <div class="project-title-list col-sm-20 col-md-20"> <h4><%= project.title %></h4></div>
+           
+            
+                    <% projects.forEach(project => {    %>
+                    <p class="card-text"> <%= project.description %> </p>
+                    <p class="card-text">أنشئ بواسطة:  <%= project.userId.name %> </p></div>
+                </div>
 
-                    
-                </h4> </div>
-            </div>
-
-                    <div class="d-lg-flex flex-row user-meta-data-row" style="padding: 10px;">
-                        <div class="project-title-list col-sm-12 col-md-12"  style="padding: 10px;"> 
-                            <h4><%= project.description %> <br/>
-                                <i class="fas fa-money-bill-alt"> <%= project.budget %> </i>  <br/>
-                                <i class="fa fa-calendar"> <%= project.postedDate %></i>  <br/>
-                                <i class="fas fa-user-tag"> 0 proposals</i> </h4> 
-                            
-
-                      <button type="submit" class="btn btn-info" align="left"> تقديم عرض</button>
-                            </div>       </div>
+                    <button type="submit" class="btn btn-info" align="right"> <%= project.budget %> ريال سعودي </button>  
+                    <button type="submit" class="btn btn-info" align="right"> <%= project.postedDate %></button>  
+                    <button type="submit" class="btn btn-info" align="left"> تقديم عرض</button>
+                    <%})%>  
+                </div>   
+            </div>   
+        </div>  </div>
+    </div>
 
 </div>
                <%})%>  
