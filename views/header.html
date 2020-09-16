@@ -12,7 +12,10 @@
       <li class="nav-item active"><a title="My Account" href="/projects" class="nav-link">المشاريع</a></li>
       <%}%>
       <li  class="nav-item active" ><a title="My Account" href="/users/<%= currentUser._id %>/profile" class="nav-link">حسابي</a></li>
+      <% if(!currentUser.isAdmin){%>
+
       <li  class="nav-item active"><a title="My Account" href="/users/<%= currentUser._id %> /projects" class="nav-link">مشاريعي</a></li>
+      <%}%>
       <li  class="nav-item active" ><a title="Post New" href="/projects/new" class="nav-link">إضافة مشروع</a></li>
 
   <div >

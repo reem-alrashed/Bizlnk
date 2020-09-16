@@ -209,7 +209,7 @@ authenticate: passport.authenticate('local',{
     },
     showProjects:(req, res) =>{
         console.log(req.params.uid);
-        Project.find({userId:" 5f60d43cb2534f1972c0a951"}).then(projects=>{
+        Project.find({userId:"5f60d43cb2534f1972c0a951"}).then(projects=>{
             res.locals.projects = projects
             res.render('user/showProjects',projects)
         })
