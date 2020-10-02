@@ -17,29 +17,34 @@ module.exports={
        })
        })
         },
-       submitProposal:function(req, res){
+       submitProposal:(req,res)=>{
+           console.log(req.params.uid);
+           let userid=req.params.uid;
+           console.log(req.params.pid);
+           let projectid=req.params.pid
       
-                let proposal = new Proposal({
-                    userId:req.params.uid,
-                   projectId:req.params.pid
-                })
-                   proposal.save(function (err) {
-                //    if (err){
-                //        req.flash('error','Error adding proposal');
-                //        res.redirect("/projects/search")
-                //    }
-                //    else{ 
-                       req.flash('success','تم تسليم العرض بنجاح');
-                       res.redirect("/projects/search")
-                  //    }
+        const proposal = new Proposal({
+            userId: userid,
+            projectId:projectid,
+            approved: false
             
-                 })
-                }
-              
-           
-       
-      
+        })
+        proposal.save(function (err) {
+           if (err){
 
-       
+               console.log(err);
+               req.flash('error','Error adding proposal');
+               res.redirect("/projects/search")
+             
+           }
 
+           else{ 
+               req.flash('success','تم تقديم العرض');
+               res.redirect("/projects/search")
+               }
+
+         })
+         
+
+}
 }
