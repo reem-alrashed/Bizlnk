@@ -130,7 +130,7 @@ show: (req,res)=>{
 },
 
 loginForm:(req,res)=>{
-    res.render('user/login')
+    res.render('user/signin-image')
 },
 signInForm:(req,res)=>{
     res.render('user/signIn')

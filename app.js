@@ -18,7 +18,7 @@ mongoose.connect('mongodb://localhost:27017/Taawon',{
 });
 
 
-app.set('port',3000);
+app.set('port',3001);
 app.set('view engine','ejs');
 app.use(layouts);
 app.use(express.static('public'));
