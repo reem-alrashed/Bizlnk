@@ -21,7 +21,7 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 
 
-app.set('port',3000);
+app.set('port',3001);
 app.set('view engine','ejs');
 app.use(layouts);
 app.use(express.static('public'));
