@@ -43,10 +43,10 @@ new : (req , res ) =>{
             User.register(newUser, req.body.password, (error, user) =>{
                 if(user){
                     req.flash('success', 'تم حفظ البيانات بنجاح');
-                    res.redirect('/users');
+                    res.redirect('/projects/home');
                 }else{
                     req.flash('error', `الرجاء التحقق من البيانات`);
-                    res.redirect ('/users/new');
+                    res.redirect('/projects/home');
                 }
             })
         ) }

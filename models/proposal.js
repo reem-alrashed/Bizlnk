@@ -1,7 +1,6 @@
 
 const mongoose = require("mongoose")
 const { Schema } = require("mongoose")
-const passportLocalMongoose = require('passport-local-mongoose');
 
 ProposalSchema = new Schema({
     userId: { type: Schema.Types.ObjectId, ref: 'User' }, 
