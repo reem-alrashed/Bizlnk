@@ -7,11 +7,7 @@
     <!-- Viewport-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon and Touch Icons-->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="mask-icon" color="#5bbad5" href="safari-pinned-tab.svg">
+
     <meta name="msapplication-TileColor" content="#766df4">
     <meta name="theme-color" content="#ffffff">
     <!-- Page loading styles-->
@@ -105,12 +101,15 @@
       <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
       <header class="cs-header navbar navbar-expand-lg navbar-light navbar-floating navbar-sticky" data-scroll-header>
         <div class="container px-0 px-xl-3">
-          <button class="navbar-toggler ml-n2 mr-2" type="button" data-toggle="offcanvas" data-offcanvas-id="primaryMenu"><span class="navbar-toggler-icon"></span></button><a class="navbar-brand order-lg-1 mx-auto ml-lg-0 pr-lg-2 mr-lg-4" href="index.html"><img class="d-none d-lg-block" width="153" src="img/logo/logo-dark.png" alt="منصة تَعَاوُن"/><img class="d-lg-none" width="58" src="img/logo/logo-icon.png" alt="منصة تَعَاوُن"/></a>
-          <div class="d-flex align-items-center order-lg-3 ml-lg-auto"><a class="nav-link-style font-size-sm text-nowrap" href="/users/login" data-toggle="modal" data-view="#modal-signin-view"><i class="fe-user font-size-xl mr-2"></i>تسجيل الدخول</a><a class="btn btn-primary ml-grid-gutter d-none d-lg-inline-block" href="/users/signIn">انشاء حساب</a></div>
+         
+          <a class="navbar-brand order-lg-1 mx-auto ml-lg-0 pr-lg-2 mr-lg-4"href="/projects/home" >منصة تَعَاوُن</a>
+          <div class="d-flex align-items-center order-lg-3 ml-lg-auto">
+            <a class="btn btn-primary ml-grid-gutter d-none d-lg-inline-block" href="/users/login">تسجيل الدخول</a>
+
+              <a class="btn btn-primary ml-grid-gutter d-none d-lg-inline-block" href="/users/signIn">انشاء حساب</a></div>
           <div class="cs-offcanvas-collapse order-lg-2" id="primaryMenu">
             <div class="cs-offcanvas-cap navbar-box-shadow">
           
-              <button class="close lead" type="button" data-toggle="offcanvas" data-offcanvas-id="primaryMenu"><span aria-hidden="true">&times;</span></button>
             </div>
             <div class="cs-offcanvas-body">
               <!-- Menu-->
@@ -123,11 +122,11 @@
                 <li class="nav-item dropdown dropdown-mega"><a title="My Account" href="/projects" class="nav-link">المشاريع</a>
                 <%}%></li>
 
-                    <li class="nav-item dropdown""><a title="My Account" href="#" class="nav-link">حسابي</a>
+                    <li class="nav-item dropdown""><a title="My Account" href="#" class="nav-link"> حسابي </a>
                     <% if(!currentUser.isAdmin){%>
 
                       <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/users/<%= currentUser._id %>/profile">حسابي</a></li>
+                        <li><a class="dropdown-item" href="/users/<%= currentUser._id %>/profile"> حسابي </a></li>
                         <li><a class="dropdown-item" href="account-notifications.html">العروض المقدمة</a></li>
                         <li><a class="dropdown-item" href="/users/logout" ><%=currentUser.name%> - تسجيل الخروج</a>
                         </li> <%}else{%>
