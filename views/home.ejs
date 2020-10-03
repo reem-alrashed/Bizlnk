@@ -55,9 +55,9 @@
 <div class="container" dir="rtl" align="right" dir="rtl" align="right" >
     <div id="h1"class="p-3 mb-2 bg-light text-dark">المشاريع المضافة</div>
     <br></br>                                                                   
+    <% projects.forEach(project => {    %>
       <div class="card">
       <div class="card-body">
-        <% projects.forEach(project => {    %>
         <h4 class="card-title"><%= project.title %></h4>
         <p class="card-text"> <%= project.description %> </p>
         <p class="card-text">أنشئ بواسطة:  <%= project.userId.name %> </p>
@@ -66,8 +66,8 @@
         
       </div>
     </div>
-</div>   
-<%})%>    
+    <%})%>    
+  </div>   
 
                   <br></br>
          <div class="see-all" style="text-align: center;"><a class="btn btn-info" > البحث عن مشاريع أخرى</a>

@@ -153,7 +153,7 @@ let currentDate= year + "-" + month + "-" + date + " " + hours + ":" + minutes +
                         }
                         else{
                             console.log("one project has deleted")
-                                           }
+                     }
                      
                     })
                     req.flash('error','تم حذف الإجتماع بنجاح');
