@@ -40,7 +40,7 @@ body{
                 <h4 class="card-title"><%= project.title %></h4>
                 <p class="card-text"> <%= project.description %> </p>
                 <p class="card-text">أنشئ بواسطة:  <%= project.userId.name %> </p>
-                <p class="btn btn-info"> <%= project.budget %> ريال سعودي </p>  
+                <p  class="btn btn-primary ml-grid-gutter d-none d-lg-inline-block"> <%= project.budget %> ريال سعودي </p>  
 
                 <% if(loggedIn){%>
                     <form method="POST" action="/proposals/<%= currentUser._id %> /<%= project._id %>/submit">
