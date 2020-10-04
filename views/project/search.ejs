@@ -27,7 +27,7 @@ body{
            <div class="card p-3">
    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <% projects.forEach(project => { %>
-            <a class="btn btn-info" href="/projects/search/<%= project._id %>"><%= project.type %></a>
+            <a class="btn btn-primary ml-grid-gutter d-none d-lg-inline-block" href="/projects/search/<%= project._id %>"><%= project.type %></a>
    
                 <%}) %> 
 <br><br>
@@ -44,7 +44,7 @@ body{
 
                 <% if(loggedIn){%>
                     <form method="POST" action="/proposals/<%= currentUser._id %> /<%= project._id %>/submit">
-                    <button class="btn btn-info" type="submit">تقديم عرض</button>
+                    <button class="btn btn-primary ml-grid-gutter d-none d-lg-inline-block" type="submit">تقديم عرض</button>
                 </form>
                 <% }%>
 

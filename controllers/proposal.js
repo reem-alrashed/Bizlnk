@@ -33,18 +33,14 @@ module.exports={
         })
         proposal.save(function (err) {
            if (err){
-
                console.log(err);
                req.flash('error','Error adding proposal');
-               res.redirect("/projects/search")
-             
+               res.redirect("/projects/search")            
            }
-
            else{ 
                req.flash('success','تم تقديم العرض');
                res.redirect("/projects/search")
                }
-
          })
          
 
