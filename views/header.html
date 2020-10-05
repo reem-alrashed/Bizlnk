@@ -97,37 +97,41 @@
     <base href="/">
     <link  href="css/theme.min.css">
   </head>
+  
       <!-- Navbar (Floating dark)-->
       <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
-      <header style="text-align: right"class="cs-header navbar navbar-expand-lg navbar-light navbar-floating navbar-sticky" data-scroll-header>
+      <header class="cs-header navbar navbar-expand-lg navbar-light navbar-floating navbar-sticky" data-scroll-header>
         <div class="container px-0 px-xl-3">
          
-          <a class="navbar-brand order-lg-1 mx-auto ml-lg-0 pr-lg-2 mr-lg-4"href="/projects/home" >منصة تَعَاوُن</a>
+          <a class="navbar-brand order-lg-1 mx-auto ml-lg-0 pr-lg-2 mr-lg-4" href="/projects/home" >منصة تَعَاوُن</a>
           
           <div class="cs-offcanvas-collapse order-lg-1" id="primaryMenu">
-            <div class="cs-offcanvas-cap navbar-box-shadow">
-          
-            </div>
+         
             <div class="cs-offcanvas-body">
               <!-- Menu-->
               <ul class="navbar-nav">
-                <li ><a class="dropdown-item" href="/projects/search" >أفكار المشاريع</a>
-                </li>   <% if(loggedIn){%>
-                      <li><a class="dropdown-item" href="/projects/new" class="nav-link">إضافة مشروع</a></li>
+                <li ><a class="nav-link dropdown" href="/projects/search" >أفكار المشاريع</a></li>
+              <% if(loggedIn){%>
+                      <li ><a class="nav-link dropdown"  href="/projects/new"  >إضافة مشروع</a></li>
+                      <li ><a class="nav-link dropdown" href="/users/<%= currentUser._id %> /projects"  >مشاريعي</a></li>
 
-                      <li><a class="dropdown-item" href="/users/<%= currentUser._id %> /projects" class="nav-link">مشاريعي</a>
                   <% if(currentUser.isAdmin){%>
-                
-                <li class="nav-item dropdown dropdown-mega"><a href="/users" class="nav-link">المستخدمين</a></li>
-                <li class="nav-item dropdown dropdown-mega"><a title="My Account" href="/projects" class="nav-link">المشاريع</a>
+                <li>  <a class="nav-link dropdown" href="/users">المستخدمين</a></li>
+                <li><a class="nav-link dropdown" href="/projects"> المشاريع </a></li>
+
                 <%}%></li>
                 
                 <% if(!currentUser.isAdmin){%>
                 <li><a class="dropdown-item" href="account-notifications.html">العروض المقدمة</a></li>
+                <li><a class="nav-link dropdown" href="/users/<%= currentUser._id %> /projects">مشاريعي</a></li>
+                     <a class="dropdown-item" href="/projects/new" class="nav-link">إضافة مشروع</a>
+                      <a class="dropdown-item" href="account-notifications.html">العروض المقدمة</a>
+                     
+                </li>
                 <%}%>
-                <li><a class="dropdown-item" href="/users/<%= currentUser._id %>/profile"> حسابي </a></li>
+                <li><a class="nav-link dropdown" href="/users/<%= currentUser._id %>/profile"> حسابي </a></li>
        
-                <li><a class="dropdown-item" href="/users/logout" ><%=currentUser.name%> - تسجيل الخروج</a>
+                <li><a class="nav-link dropdown" href="/users/logout" ><%=currentUser.name%> - تسجيل الخروج</a>
 
 
 
