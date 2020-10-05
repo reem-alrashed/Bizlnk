@@ -2,23 +2,25 @@
     <html lang="ar" dir="rtl"> 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <br>
-<div id="h1"class="p-3 mb-2 bg-light text-dark">عرض بيانات المستخدم</div>
-
+<div class="d-sm-flex align-items-center justify-content-between pb-4 text-center text-sm-right">
+  <h1 class="h3 mb-2 text-nowrap">عرض بيانات المستخدم</h1>
+</div>
     <div class="container" align="center">
     <div class="row">
       <div class="col">
-   <div  class="card" style="width:40%; text-align: right;" >
+   <div  class="card" style="width:30%; text-align: right;" >
      
         <div class="card-body">
-          <h3 class="card-title "><%= user.name %> </h3>
-          <p class="card-text text-muted"><%= user.email %> </p>
-          <p class="card-text text-muted"><%= user.field %> </p>
-          <p class="card-text text-right"> <%=user.bio%>   </p>
+          <h3 class="card-title "> الاسم: <%= user.name %> </h3>
+          <p class="card-text text-muted">البريد الالكتروني: <%= user.email %> </p>
+          <p class="card-text text-muted">المجال: <%= user.field %> </p>
         </div>
      
       </div>
-    </span>
+      </div></div></div>
+      <br/>
       </html>
+    
 
 
      

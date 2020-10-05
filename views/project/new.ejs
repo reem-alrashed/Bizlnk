@@ -1,59 +1,88 @@
-<head>
-  <style>
-    h2{
-      font-size: 50px;
-
-    }
-  </style>
-</head>
-<body > 
-          <div class="container">
-                <br/>
-            <div id="h1"class="p-3 mb-2 bg-light text-dark"> اضافة مشروع</div>
-
-
-<form method="post" action="/projects/create/<%= currentUser._id %>">
-  <div class="form-group" dir="rtl" align="right" >
-    <label for="name">عنوان المشروع</label>
-          <input type="text" class="form-control" name="name" placeholder="عنوان المشروع" >
-           </div>
-           <div class="form-group" dir="rtl" align="right" >
-            <label for="name">وصف المشروع</label>
-            <textarea rows="6" cols="60" class="form-control" placeholder="وصف للمشروع" name="description"></textarea>
-           </div>     
-                <div class="form-group" dir="rtl" align="right" >
-                  <label for="name">مجال المشروع</label>
-
-                  <div class="multi_cat_placeholder_thing">
-          <input type="checkbox" name="type" value="برمجة تطبيقات الويب" name="project_cat_cat_multi[]"> برمجة تطبيقات الويب<br>
-          <input type="checkbox" name="type"value="برمجة تطبيقات الجوال" name="project_cat_cat_multi[]"> برمجة تطبيقات الجوال<br>
-          <input type="checkbox" name="type"value="واقع معزز" name="project_cat_cat_multi[]"> واقع معزز<br>    
-          <input type="checkbox" name="type"value="واقع افتراضي" name="project_cat_cat_multi[]"> واقع افتراضي<br>  
-          <input type="checkbox" name="type"value="علوم البيانات" name="project_cat_cat_multi[]"> علوم البيانات<br> 
-
-      </div>
-                </div>
-                <div class="form-group" dir="rtl" align="right" >
-
-                  <label for="name"> المهارات المطلوبة</label>
-      <input type="text" size="50" class="form-control" name="requiredSkills" placeholder="المهارات المطلوبة" >
-                </div>
-                <div class="form-group" dir="rtl" align="right" >
-                  <label for="name">  ميزانية المشروع</label>
-<input type="number" required="" size="50" class="form-control" name="budget" placeholder="الميزانية بالريال السعودي" value="10000">
-                </div>
- 
- 
-    <button type="submit" class="btn btn-info" align="left">إضافة</button>
-
-</form>
-</div>   
-        </div>
-
-  </div> 
-      </div>
-          </div>
+<div class="cs-page-loading active">
+  <div class="cs-page-loading-inner">
+    <div class="cs-page-spinner"></div><span>جاري التحميل..</span>
+  </div>
+</div>
+<main class="cs-page-wrapper">
+  <div class="d-sm-flex align-items-center justify-content-between pb-4 text-center text-sm-right">
+    <h1 class="h3 mb-2 text-nowrap">إضافة مشروع</h1>
+  </div>
+  <div class="col-12">
+    <hr class="mt-2 mb-4">
+    <div class="d-flex flex-wrap justify-content-between align-items-center">
+      <main class="cs-page-wrapper">
+        <form method="post" action="/projects/create/<%= currentUser._id %>">
+          <div class="col-lg-7" style="text-align: right;">
+            <div class="d-flex flex-column h-100 bg-light rounded-lg box-shadow-lg p-4">
+              <div class="py-2 p-md-3">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group" dir="rtl" align="right">
+                      <label for="name">عنوان المشروع</label>
+                      <input type="text" class="form-control" name="name" placeholder="عنوان المشروع">
+                    </div>
                   </div>
+                  <div class="col-sm-6">
+
+                    <div class="form-group" dir="rtl" align="right">
+                      <label for="name">  ميزانية المشروع</label>
+                      <input type="number" required="" class="form-control" name="budget"
+                        placeholder="الميزانية بالريال السعودي" value="10000">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+
+                    <div class="form-group" dir="rtl" align="right">
+                      <label for="name">وصف المشروع</label>
+                      <textarea rows="4" cols="20" class="form-control" placeholder="وصف للمشروع"
+                        name="description"></textarea>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group" dir="rtl" align="right">
+                      <label for="name">مجال المشروع</label>
+
+                      <div class="multi_cat_placeholder_thing">
+                        <input type="checkbox" name="type" value="برمجة تطبيقات الويب" name="project_cat_cat_multi[]">
+                        برمجة تطبيقات الويب<br>
+                        <input type="checkbox" name="type" value="برمجة تطبيقات الجوال" name="project_cat_cat_multi[]">
+                        برمجة تطبيقات الجوال<br>
+                        <input type="checkbox" name="type" value="واقع معزز" name="project_cat_cat_multi[]"> واقع
+                        معزز<br>
+                        <input type="checkbox" name="type" value="واقع افتراضي" name="project_cat_cat_multi[]"> واقع
+                        افتراضي<br>
+                        <input type="checkbox" name="type" value="علوم البيانات" name="project_cat_cat_multi[]"> علوم
+                        البيانات<br>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6">
+
+                    <div class="form-group" dir="rtl" align="right">
+                      <label for="name"> المهارات المطلوبة</label>
+                      <input type="text" size="50" class="form-control" name="requiredSkills"
+                        placeholder="المهارات المطلوبة">
+                    </div>
+                  </div>
+
+
+
+                  <div class="col-12">
+                    <hr class="mt-2 mb-4">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center">
+
+                      <button class="btn btn-primary mt-3 mt-sm-0" type="submit">اضافة</button>
+                    </div>
+                  </div>
+        </form>
+    </div>
   </div>
 
-</body>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  </body>
