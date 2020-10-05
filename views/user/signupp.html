@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <title>التسجيل</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon and Touch Icons-->
+
+    <meta name="msapplication-TileColor" content="#766df4">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Page loading styles-->
+    <style>
+      .cs-page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .4s .2s ease-in-out;
+        transition: all .4s .2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      .cs-page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .cs-page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity .2s ease-in-out;
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+      }
+      .cs-page-loading.active > .cs-page-loading-inner {
+        opacity: 1;
+      }
+      .cs-page-loading-inner > span {
+        display: block;
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #737491;
+      }
+      .cs-page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: .75rem;
+        vertical-align: text-bottom;
+        border: .15em solid #766df4;
+        border-right-color: transparent;
+        border-radius: 50%;
+        -webkit-animation: spinner .75s linear infinite;
+        animation: spinner .75s linear infinite;
+      }
+      @-webkit-keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      
+    </style>
+    <!-- Page loading scripts-->
+    <script>
+      (function () {
+        window.onload = function () {
+          var preloader = document.querySelector('.cs-page-loading');
+          preloader.classList.remove('active');
+          setTimeout(function () {
+            preloader.remove();
+          }, 2000);
+        };
+      })();
+      
+    </script>
+      <base href="/">
+    <link rel="stylesheet" media="screen" href="css/theme.min.css">
+  </head>
+  <!-- Body-->
+  <body>
+    <!-- Page loading spinner-->
+    <div class="cs-page-loading active">
+      <div class="cs-page-loading-inner">
+        <div class="cs-page-spinner"></div><span>Loading...</span>
+      </div>
+    </div>
+    <main class="cs-page-wrapper">
+      
+      <!-- Page content-->
+      <div class="container py-5 py-md-7" style="text-align: right;">
+        <div class="row align-items-center pt-2">
+    
+          <div class="col-md-6 offset-lg-1">
+            <h2 class="h3">التسجيل</h2>
+            <form class="row needs-validation" novalidate>
+              <div class="col-sm-6 form-group">
+                <label class="form-label" for="reg-fn">الاسم<sup class="text-danger ml-1">*</sup></label>
+                <input class="form-control" type="text" required id="reg-fn">
+                <div class="invalid-feedback">الرجاء ادخال الاسم</div>
+              </div>
+          
+              <div class="col-sm-6 form-group">
+                <label class="form-label" for="reg-email">البريد الالكتروني<sup class="text-danger ml-1">*</sup></label>
+                <input class="form-control" type="email" required id="reg-email">
+                <div class="invalid-feedback">الرجاء ادخال بريد الكتروني</div>
+              </div>
+             
+              <div class="col-sm-6 form-group"  >
+                <label for="field" align="right" >المجال</label>
+                <select name="field" style=" width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                box-sizing: border-box;
+                font-size: 21px;
+                font-style:bold;" >
+               <option value="تقنية">
+                تقنية</option>
+                </select>
+              </div>
+              <div class="col-sm-6 form-group">
+                    <legend class="col-form-label ">نوع المستخدم</legend>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
+                        <label class="form-check-label" for="gridRadios1">&nbsp; &nbsp; طالب</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                        <label class="form-check-label" for="gridRadios2">&nbsp; &nbsp; مستثمر </label>
+                      </div>
+                  </div>
+              <div class="col-sm-6 form-group">
+                <label class="form-label" for="reg-password">كلمة المرور<sup class="text-danger ml-1">*</sup></label>
+                <input class="form-control" type="password" required id="reg-password">
+                <div class="invalid-feedback">Please provide password!</div>
+              </div>
+              <br/> <br/>
+              <div class="col-sm-12 ">
+                <button class="btn btn-primary btn-block" type="submit">التسجيل</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+ 
+  
+    <!-- Main theme script-->
+    <script src="js/theme.min.js"></script>
+  </body>
+</html>

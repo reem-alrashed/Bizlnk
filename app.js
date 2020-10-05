@@ -29,6 +29,7 @@ app.use(methodOverride('_method',{methods:['POST','GET']}));
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use(express.static('public'))
 
 app.use(cookieParser('team'))
 app.use(expressSession ({secret: 'team'}))

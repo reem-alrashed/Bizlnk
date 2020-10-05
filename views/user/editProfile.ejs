@@ -1,41 +1,169 @@
-<br/>
-<div id="h1"class="p-3 mb-2 bg-light text-dark">حسابي</div>
 
-<br>
-<form method="POST" action="/users/<%= user._id %>/edit?_method=PUT">
-    <div class="form-group" dir="rtl" align="right" >
-      <label for="name">اسم المستخدم</label>
-      <input type="text" class="form-control" name="name" value="<%= user.name %>" placeholder="اسم المستخدم" aria-describedby="emailHelp">
-    </div>
-    
-    <div class="form-group" dir="rtl" align="right" >
-      <label for="email">البريد الإلكتروني</label>
-      <input type="email" class="form-control" name="email"   value="<%=user.email%>" placeholder="البريد الإلكتروني" >
-    </div>
-      <div class="form-group" dir="rtl" align="right" >
-  
-      <label for="gender" >المجال</label>
-      <select name="gender" style=" width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      box-sizing: border-box;
-      font-size: 21px;
-      font-style:bold;" >
-         <option value="<%=user.field %>">
-          <%=user.field%> </option>
-     <option value="تقنية">
-      تقنية</option>
-    <option value="تعليم">
-      تعليم</option>
-      </select></div>
-<!-- 
-      <div class="form-group" dir="rtl" align="right" >
-        <label for="bio">نبذة</label>
-        <textarea class="form-control" type="text" name="bio" value="<%=user.b%>" rows="4" placeholder="نبذة"> <%=user.bio%></textarea>
+  <head>
+    <meta charset="utf-8">
+    <title>Profile</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="msapplication-TileColor" content="#766df4">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Page loading styles-->
+    <style>
+      .cs-page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .4s .2s ease-in-out;
+        transition: all .4s .2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      .cs-page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .cs-page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity .2s ease-in-out;
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+      }
+      .cs-page-loading.active > .cs-page-loading-inner {
+        opacity: 1;
+      }
+      .cs-page-loading-inner > span {
+        display: block;
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #737491;
+      }
+      .cs-page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: .75rem;
+        vertical-align: text-bottom;
+        border: .15em solid #766df4;
+        border-right-color: transparent;
+        border-radius: 50%;
+        -webkit-animation: spinner .75s linear infinite;
+        animation: spinner .75s linear infinite;
+      }
+      @-webkit-keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      
+    </style>
+    <!-- Page loading scripts-->
+    <script>
+      (function () {
+        window.onload = function () {
+          var preloader = document.querySelector('.cs-page-loading');
+          preloader.classList.remove('active');
+          setTimeout(function () {
+            preloader.remove();
+          }, 2000);
+        };
+      })();
+      
+    </script>
+    <!-- Vendor Styles-->
+    <!-- Main Theme Styles + Bootstrap-->
+    <base href="/">
+    <link rel="stylesheet" media="screen" href="css/theme.min.css">
+  </head>
+  <!-- Body-->
+  <body style="background-color:#f7f7fc;">
+    <!-- Page loading spinner-->
+    <div class="cs-page-loading active">
+      <div class="cs-page-loading-inner">
+        <div class="cs-page-spinner"></div><span>Loading...</span>
       </div>
-      -->
- 
+    </div>
+    <main class="cs-page-wrapper">
+        <form method="POST" action="/users/<%= user._id %>/edit?_method=PUT">
+            <!-- Content-->
+          <div class="col-lg-8" style="text-align: right;">
+            <div class="d-flex flex-column h-100 bg-light rounded-lg box-shadow-lg p-4">
+              <div class="py-2 p-md-3">
+                <!-- Title + Delete link-->
+                <div class="d-sm-flex align-items-center justify-content-between pb-4 text-center text-sm-right">
+                  <h1 class="h3 mb-2 text-nowrap">حسابي</h1>
+                </div>
+               
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="name">اسم المستخدم</label>
+                        <input type="text" class="form-control" name="name" value="<%= user.name %>" placeholder="اسم المستخدم" aria-describedby="emailHelp">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input type="email" class="form-control" name="email"   value="<%=user.email%>" placeholder="البريد الإلكتروني" >
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                  <div class="form-group" dir="rtl" align="right" >
+  
+                    <label for="gender" >المجال</label>
+                    <select name="gender" style=" width: 100%;
+                    padding: 12px 20px;
+                    margin: 8px 0;
+                    box-sizing: border-box;
+                    font-size: 21px;
+                    font-style:bold;" >
+                       <option value="<%=user.field %>">
+                        <%=user.field%> </option>
+                   <option value="تقنية">
+                    تقنية</option>
+                  <option value="تعليم">
+                    تعليم</option>
+                    </select></div>  
+                  </div>            
+              
+                 
+                  <div class="col-12">
+                    <hr class="mt-2 mb-4">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center">
+                   
+                      <button class="btn btn-primary mt-3 mt-sm-0" type="submit">حفظ التغييرات</button>
+                    </form> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer-->
+  
+    <!-- Vendor scrits: js libraries and plugins-->
 
-      <button type="submit" class="btn btn-info" role="button" aria-pressed="true">حفظ التغييرات</button>
-
-    </form> 
+    <script src="js/theme.min.js"></script>
+  </body>
