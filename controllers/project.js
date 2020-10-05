@@ -232,7 +232,7 @@ let currentDate= year + "-" + month + "-" + date + " " + hours + ":" + minutes +
                         }
                         else{
                             req.flash('success', 'تم حفظ التغييرات بنجاح!')
-                            res.render("project/done")
+                            res.redirect("project/index")
                         }
 
                 })
