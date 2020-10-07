@@ -103,16 +103,15 @@
       <header class="cs-header navbar navbar-expand-lg navbar-light navbar-floating navbar-sticky" data-scroll-header>
         <div class="container px-0 px-xl-3">
          
-          <a class="navbar-brand order-lg-1 mx-auto ml-lg-0 pr-lg-2 mr-lg-4" href="/projects/home" >منصة تَعَاوُن</a>
           
-          <div class="cs-offcanvas-collapse order-lg-1" id="primaryMenu">
-         
-            <div class="cs-offcanvas-body">
-              <!-- Menu-->
+          
+          <!-- Menu-->
               <ul class="navbar-nav">
+                <li ><a class="nav-link dropdown order-lg-1  mx-auto ml-lg-0 pr-lg-2 " href="/projects/home"  style="text-weight:bold;">منصة تَعَاوُن</a></li>
+
                 <li ><a class="nav-link dropdown" href="/projects/search" >أفكار المشاريع</a></li>
               <% if(loggedIn){%>
-                      <li ><a class="nav-link dropdown"  href="/projects/new"  >إضافة مشروع</a></li>
+                <!--     <li ><a class="nav-link dropdown"  href="/projects/new"  >إضافة مشروع</a></li>--> 
                       <li ><a class="nav-link dropdown" href="/users/<%= currentUser._id %> /projects"  >مشاريعي</a></li>
 
                   <% if(currentUser.isAdmin){%>
@@ -122,16 +121,12 @@
                 <%}%></li>
                 
                 <% if(!currentUser.isAdmin){%>
-                <li><a class="dropdown-item" href="account-notifications.html">العروض المقدمة</a></li>
-                <li><a class="nav-link dropdown" href="/users/<%= currentUser._id %> /projects">مشاريعي</a></li>
-                     <a class="dropdown-item" href="/projects/new" class="nav-link">إضافة مشروع</a>
-                      <a class="dropdown-item" href="account-notifications.html">العروض المقدمة</a>
-                     
-                </li>
+                <li><a class="nav-link dropdown" href="account-notifications.html">العروض المقدمة</a></li>
+                 <li>   <a class="nav-link dropdown" href="/projects/new" class="nav-link">إضافة مشروع</a></li> 
                 <%}%>
                 <li><a class="nav-link dropdown" href="/users/<%= currentUser._id %>/profile"> حسابي </a></li>
        
-                <li><a class="nav-link dropdown" href="/users/logout" ><%=currentUser.name%> - تسجيل الخروج</a>
+                <li><a class="nav-link dropdown" href="/users/logout"><%=currentUser.name%> - تسجيل الخروج</a>
 
 
 
@@ -145,7 +140,6 @@
                
                 </li>
               </ul>
-            </div>
           </div>
         </div>
       </header>

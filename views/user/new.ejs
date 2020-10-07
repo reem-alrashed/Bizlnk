@@ -1,42 +1,91 @@
-    <br><br>
-    <form method="POST" action="/users/insert">
-        <div class="form-group" dir="rtl" align="right" >
-          <label for="name">اسم المستخدم</label>
-          <input type="text" class="form-control" name="name" placeholder="اسم المستخدم" aria-describedby="emailHelp">
-          </div>
-        
-        <div class="form-group" dir="rtl" align="right" >
-          <label for="email">البريد الإلكتروني</label>
-          <input type="email" class="form-control" name="email"  placeholder="البريد الإلكتروني" >
-        </div>
-
-        <div class="form-group" dir="rtl" align="right" dir="rtl" align="right" >
-            <label for="exampleInputPassword1">كلمة المرور</label>
-            <input type="password" class="form-control" name="password" placeholder="كلمة المرور">
-          </div>
-
-          <h2>&nbsp;</h2><fieldset class="form-group">
-            <div class="row"  dir="rtl" align="right" dir="rtl" align="right" >
-              <legend class="col-form-label col-sm-2 pt-0">نوع المستخدم</legend>
-              <br></br>
-              <div class="col-sm-10">
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
-                  <label class="form-check-label" for="gridRadios1">&nbsp; &nbsp; طالب</label>
+<div class="cs-page-loading active">
+  <div class="cs-page-loading-inner">
+    <div class="cs-page-spinner"></div><span>جاري التحميل..</span>
+  </div>
+</div>
+<main class="cs-page-wrapper">
+  <div class="d-sm-flex align-items-center justify-content-between pb-4 text-center text-sm-right">
+    <h1 class="h3 mb-2 text-nowrap">إضافة مستخدم</h1>
+  </div>
+            <div class="col-12">
+              <hr class="mt-2 mb-4">
+              <div class="d-flex flex-wrap justify-content-between align-items-center">
+                <main class="cs-page-wrapper">
+                  <form method="POST" action="/users/insert">
+                    <!-- Content-->
+                    <div class="col-lg-8" style="text-align: right;">
+                      <div class="d-flex flex-column h-100 bg-light rounded-lg box-shadow-lg p-4">
+                        <div class="py-2 p-md-3">
+                          <!-- Title + Delete link-->
+                          
+                         
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="form-group" dir="rtl" align="right" >
+                                <label for="name">اسم المستخدم</label>
+                                <input type="text" class="form-control" name="name" placeholder="اسم المستخدم" aria-describedby="emailHelp">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="form-group" dir="rtl" align="right" >
+                                <label for="email">البريد الإلكتروني</label>
+                                <input type="email" class="form-control" name="email"  placeholder="البريد الإلكتروني" >
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                            <div class="form-group" dir="rtl" align="right" dir="rtl" align="right" >
+                              <label for="exampleInputPassword1">كلمة المرور</label>
+                              <input type="password" class="form-control" name="password" placeholder="كلمة المرور">
+                            </div>
+                          </div>
+                
+                
+                            <div class="col-sm-6">
+                            <div class="form-group" dir="rtl" align="right" >
+                
+                              <label for="gender" >المجال</label>
+                              <select name="gender" style=" width: 100%;
+                              padding: 12px 20px;
+                              margin: 8px 0;
+                              box-sizing: border-box;
+                              font-size: 21px;
+                              font-style:bold;" >
+                                 <option value="">
+                                  </option>
+                             <option value="تقنية">
+                              تقنية</option>
+                            <option value="تعليم">
+                              تعليم</option>
+                              </select></div>  
+                            </div>    
+                            
+                            <h2>&nbsp;</h2><fieldset class="form-group">
+                              <div class="row"  dir="rtl" align="right" dir="rtl" align="right" >
+                                <legend class="col-form-label">نوع المستخدم</legend>
+                                <div class="col-sm-10">
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
+                                    <label class="form-check-label" for="gridRadios1">&nbsp; &nbsp; طالب</label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                                    <label class="form-check-label" for="gridRadios2">&nbsp; &nbsp; مستثمر </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </fieldset>
+                        <br/>
+                        <div class="col-12">
+                          <hr class="mt-2 mb-4">
+                          <div class="d-flex flex-wrap justify-content-between align-items-center">
+                         
+                        <button class="btn btn-primary mt-3 mt-sm-0" type="submit">اضافة</button>
+                          </div></div>
+                              </form> 
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                 </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                  <label class="form-check-label" for="gridRadios2">&nbsp; &nbsp; مستثمر </label>
-                </div>
-              </div>
-            </div>
-          </fieldset>
-
-          <div class="row"  dir="rtl" align="right" dir="rtl" align="right" >
-            <label for="bio">نبذة</label>
-            <textarea class="form-control" type="text" name="bio" rows="4" placeholder="نبذة"></textarea>
-          </div>
-          <br></br>
-          <button type="submit" class="btn btn-info">إضافة</button>
-        </form>
-      </div>
+                </main>
+            

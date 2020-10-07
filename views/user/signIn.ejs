@@ -1,41 +1,132 @@
-<head>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <title>التسجيل</title>
 
-<style>
-  #h1{
-font-size:30px; 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon and Touch Icons-->
 
- padding:10px;
- text-align: center;
-}
-
-</style>
-</head>
+    <meta name="msapplication-TileColor" content="#766df4">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Page loading styles-->
+    <style>
+      .cs-page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .4s .2s ease-in-out;
+        transition: all .4s .2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      .cs-page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .cs-page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity .2s ease-in-out;
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+      }
+      .cs-page-loading.active > .cs-page-loading-inner {
+        opacity: 1;
+      }
+      .cs-page-loading-inner > span {
+        display: block;
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #737491;
+      }
+      .cs-page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: .75rem;
+        vertical-align: text-bottom;
+        border: .15em solid #766df4;
+        border-right-color: transparent;
+        border-radius: 50%;
+        -webkit-animation: spinner .75s linear infinite;
+        animation: spinner .75s linear infinite;
+      }
+      @-webkit-keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      
+    </style>
+    <!-- Page loading scripts-->
+    <script>
+      (function () {
+        window.onload = function () {
+          var preloader = document.querySelector('.cs-page-loading');
+          preloader.classList.remove('active');
+          setTimeout(function () {
+            preloader.remove();
+          }, 2000);
+        };
+      })();
+      
+    </script>
+      <base href="/">
+    <link rel="stylesheet" media="screen" href="css/theme.min.css">
+  </head>
+  <!-- Body-->
+  <body>
+    <!-- Page loading spinner-->
+    <div class="cs-page-loading active">
+      <div class="cs-page-loading-inner">
+        <div class="cs-page-spinner"></div><span>جاري التحميل...</span>
+      </div>
+    </div>
 <body>
-  
 
-
+  <main class="cs-page-wrapper">
 <div class="container"> 
-  <br/>
-  <div id="h1"class="p-3 mb-2 bg-light text-dark">إنشاء حساب</div>
-  <br/>
 
+  <div id="h1"class="p-3 mb-2 bg-light text-dark">إنشاء حساب</div>
+
+      <div class="col-md-6 offset-lg-1">
 <form method="POST" action="/users/insert">
-    <div class="form-group" dir="rtl" align="right" >
-      <label for="name">اسم المستخدم</label>
+  <div class="col-sm-6 form-group">
+    <label for="name">اسم المستخدم</label>
       <input type="text" class="form-control" name="name" placeholder="اسم المستخدم" aria-describedby="emailHelp">
       </div>
     
-    <div class="form-group" dir="rtl" align="right" >
-      <label for="email">البريد الإلكتروني</label>
+      <div class="col-sm-6 form-group">
+        <label for="email">البريد الإلكتروني</label>
       <input type="email" class="form-control" name="email"  placeholder="البريد الإلكتروني" >
     </div>
 
-    <div class="form-group" dir="rtl" align="right" dir="rtl" align="right" >
-        <label for="exampleInputPassword1">كلمة المرور</label>
+    <div class="col-sm-6 form-group">
+      <label for="exampleInputPassword1">كلمة المرور</label>
         <input type="password" class="form-control" name="password" placeholder="كلمة المرور">
       </div>
-      <div class="form-group" dir="rtl" align="right" dir="rtl" align="right" >
-      <label for="field" align="right" >المجال</label>
+      <div class="col-sm-6 form-group">
+        <label for="field" align="right" >المجال</label>
       <select name="field" style=" width: 100%;
       padding: 12px 20px;
       margin: 8px 0;
@@ -46,7 +137,7 @@ font-size:30px;
       تقنية</option>
       </select>
     </div>
-    <div class="form-group" dir="rtl" align="right" dir="rtl" align="right" >
+    <div class="col-sm-6 form-group">
 
           <legend class="col-form-label col-sm-2 pt-0">نوع المستخدم</legend>
             <div class="form-check">
@@ -58,18 +149,12 @@ font-size:30px;
               <label class="form-check-label" for="gridRadios2">&nbsp; &nbsp; مستثمر </label>
             </div>
         </div>
-
-      <div class="row"  dir="rtl" align="right" dir="rtl" align="right" >
-        <label for="bio">نبذة</label>
-        <input class="form-control" type="text" name="bio" rows="4" placeholder="نبذة">
-      </div>
-      <br></br>
-      <div class="form-group" dir="rtl" align="center" dir="rtl"  >
-        <button type="submit" class="btn btn-info">إنشاء حساب</button>
-
-        <br></br>
-    
+        <div class="col-sm-5 ">
+          <button class="btn btn-primary btn-block" type="submit">التسجيل</button>
+        </div>      
+  
         لديك حساب؟ <a href="/users/login" class="link-man-1">تسجيل الدخول</a>	</div>
-   
-  </div> </form>
+</div>
+ </form>
+  </main>
 </body>
