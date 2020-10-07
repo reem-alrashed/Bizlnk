@@ -99,7 +99,7 @@
     <!-- Page loading spinner-->
     <div class="cs-page-loading active">
       <div class="cs-page-loading-inner">
-        <div class="cs-page-spinner"></div><span>Loading...</span>
+        <div class="cs-page-spinner"></div><span>جاري التحميل...</span>
       </div>
     </div>
     <main class="cs-page-wrapper">
@@ -110,7 +110,9 @@
     
           <div class="col-md-6 offset-lg-1">
             <h2 class="h3">التسجيل</h2>
-            <form class="row needs-validation" novalidate>
+            <form method="POST" action="/users/insert">
+              <div class="col-lg-4 col-md-6 offset-lg-1">
+
               <div class="col-sm-6 form-group">
                 <label class="form-label" for="reg-fn">الاسم<sup class="text-danger ml-1">*</sup></label>
                 <input class="form-control" type="text" required id="reg-fn">
@@ -150,6 +152,7 @@
                 <label class="form-label" for="reg-password">كلمة المرور<sup class="text-danger ml-1">*</sup></label>
                 <input class="form-control" type="password" required id="reg-password">
                 <div class="invalid-feedback">Please provide password!</div>
+              </div>
               </div>
               <br/> <br/>
               <div class="col-sm-12 ">

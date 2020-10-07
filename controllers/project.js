@@ -222,7 +222,6 @@ let currentDate= year + "-" + month + "-" + date + " " + hours + ":" + minutes +
                        title: req.body.title,
                        postedDate: currentDate,
                        budget: req.body.budget,
-                       type: req.body.type,
                        description: req.body.description,
                        requiredSkills: req.body.requiredSkills,
                        minNumOfStudents: req.body.minNumOfStudents

@@ -14,7 +14,8 @@ const User = require('./models/user');
 app = express(); 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/Taawon',{
-    useNewUrlParser:true
+    useNewUrlParser:true,
+    useUnifiedTopology: true 
 });
 
 
@@ -31,7 +32,7 @@ app.use(express.json());
 app.use(express.static('public'))
 
 app.use(cookieParser('team'))
-app.use(expressSession ({secret: 'team'}))
+app.use(expressSession ({secret: 'team',resave: false,saveUninitialized:false}))
 
 
 /* Passport */

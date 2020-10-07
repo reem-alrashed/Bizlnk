@@ -108,21 +108,17 @@
     <div class="container col-12">
         <main class="cs-page-wrapper d-flex flex-column">
   
-      <section class="container d-flex align-items-center pt-7 pb-3 pb-md-4" >
+      <section class="container d-flex align-items-center pt-12 pb-3 pb-md-4" >
         <div class="w-100 pt-3">
-          <div class="row" style="top: 0; left: 0; background-image: url(https://expertswhogetit.ca/wp-content/uploads/collaboration.jpg); background-size: 600px 600px;background-repeat: no-repeat;">
-      <!-- Actual content-->
+        
+      <!--  <div class="row" style="top: 0; left: 0; background-image: url(https://expertswhogetit.ca/wp-content/uploads/collaboration.jpg); background-size: 600px 600px;background-repeat: no-repeat;"> Actual content-->
             <div class="col-lg-4 col-md-6 offset-lg-1">
               <%  if (flashMessages.loginerror){ %>
                 <div class="alert alert-danger"> <%= flashMessages.loginerror %> </div>    
                 <% } %>
-     
-              <!-- Sign in view-->
-              <div class="cs-view show" id="signin-view">
+                   <div class="cs-view show" id="signin-view">
                 <h1 class="h2" style="text-align: right;">تسجيل الدخول</h1>
-                <br/>
                 <form class="needs-validation" novalidate  method="POST" action="/users/login">
-
                   <div class="input-group-overlay form-group">
                     <input class="form-control prepended-form-control" name="email"type="email" placeholder="البريد الالكتروني" required>
                   </div>
