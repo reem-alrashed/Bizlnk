@@ -112,17 +112,16 @@
                 <li ><a class="nav-link dropdown" href="/projects/search" >أفكار المشاريع</a></li>
               <% if(loggedIn){%>
                 <!--     <li ><a class="nav-link dropdown"  href="/projects/new"  >إضافة مشروع</a></li>--> 
-                      <li ><a class="nav-link dropdown" href="/users/<%= currentUser._id %> /projects"  >مشاريعي</a></li>
-
-                  <% if(currentUser.isAdmin){%>
-                <li>  <a class="nav-link dropdown" href="/users">المستخدمين</a></li>
-                <li><a class="nav-link dropdown" href="/projects"> المشاريع </a></li>
-
-                <%}%></li>
                 
-                <% if(!currentUser.isAdmin){%>
-                <li><a class="nav-link dropdown" href="account-notifications.html">العروض المقدمة</a></li>
-                 <li>   <a class="nav-link dropdown" href="/projects/new" class="nav-link">إضافة مشروع</a></li> 
+                <% if(currentUser.isAdmin){%>
+                  <li>  <a class="nav-link dropdown" href="/users">المستخدمين</a></li>
+                  <li><a class="nav-link dropdown" href="/projects"> المشاريع </a></li>
+                  
+                  <%}%></li>
+                  
+                  <% if(!currentUser.isAdmin){%>
+                    <li>   <a class="nav-link dropdown" href="/projects/new" class="nav-link">إضافة مشروع</a></li> 
+                    <li ><a class="nav-link dropdown" href="/users/<%= currentUser._id %> /projects"  >مشاريعي</a></li>
                 <%}%>
                 <li><a class="nav-link dropdown" href="/users/<%= currentUser._id %>/profile"> حسابي </a></li>
        
