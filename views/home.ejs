@@ -112,7 +112,7 @@
     <!-- Page loading spinner-->
     <div class="cs-page-loading active">
       <div class="cs-page-loading-inner">
-        <div class="cs-page-spinner"></div><span>Loading...</span>
+        <div class="cs-page-spinner"></div><span>جاري التحميل...</span>
       </div>
     </div>
     <main class="cs-page-wrapper">
@@ -181,42 +181,34 @@
         
       </section>
       <!-- Case Studies-->
-      <section class="pb-5 mb-md-2" id="card-horizontal" style="background-image: url(img/demo/marketing-seo/hero/shape-1.png);">
-        <div class="container py-2">
-          <h2 class="text-center">المشاريع المضافة</h2>
-          <% projects.forEach(project => {    %>
-          <br/>  <br/>
-            <div class="card border-0 box-shadow-lg " style="align-items: center;">
-              <div class="card-body">
-                <div class="tab-content">
-                  <div class="tab-pane fade show active" id="result6" role="tabpanel">
-                    <div class="card card-horizontal">
-                      <div class="card-body">
-                        <h5 class="card-title"><%= project.title %></h5>
-                        <p class="card-text font-size-sm"> <%= project.description %></p>
-                        <p class="card-text font-size-sm">أنشئ بواسطة:  <%= project.userId.name %> </p>
-                        <p class="btn btn-sm btn-primary"><%= project.budget %> ريال سعودي </p>  
-                        <br/>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <%})%>   
-          </section>
+      <div class="container" dir="rtl" align="right" dir="rtl" align="right" >
+        <h2 class="mb-30", style="text-align: center;">المشاريع المضافة</h2> 
+
+        <br></br>                                                                   
+        <% projects.forEach(project => {    %>
+          <div class="card">
+          <div class="card-body">
+            <h4 class="card-title"><%= project.title %></h4>
+            <p class="card-text"> <%= project.description %> </p>
+            <p class="card-text">أنشئ بواسطة:  <%= project.userId.name %> </p>
+            <p  class="btn btn-primary ml-grid-gutter d-none d-lg-inline-block"> <%= project.budget %> ريال سعودي </p>  
+            <br/>
+          </div>
+        </div>
+        <%})%>    
+      </div>  
       
           <section class="bg-secondary py-5 py-md-6" style="background-image: url(img/demo/marketing-seo/hero/shape-1.png);"></section>
  \
               <h2 class="text-center">الداعمين للمنصة</h2>
               
               <div class="row">
-                <div class="col-lg-6 col-sm-8 mb-grid-gutter"><a class="card card-hover border-0 box-shadow mx-auto" href="#" style="max-width: 400px;"><img class="card-img-top" src="img/demo/marketing-seo/about-img/Saudi.png" alt="SAFCSP"/>
+                <div class="col-lg-6 col-sm-8 mb-grid-gutter"><a class="card card-hover border-0 box-shadow mx-auto" href="#" style="max-width: 400px;"><img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Saudi_Federation_for_Cyber_Security_and_Programming.svg" alt="SAFCSP"/>
                     <div class="card-body">
                       <br/>
                       <h5 class="h5 mb-0" style="text-align: center;">الاتحاد السعودي للأمن السيبراني والبرمجة</h5>
                     </div></a></div>
-                <div class="col-lg-4 col-sm-6 mb-grid-gutter"><a class="card card-hover border-0 box-shadow mx-auto" href="#" style="max-width: 400px;"><img class="card-img-top" src="img/demo/marketing-seo/about-img/PNU_logo.png" alt="PNU"/>
+                <div class="col-lg-4 col-sm-6 mb-grid-gutter"><a class="card card-hover border-0 box-shadow mx-auto" href="#" style="max-width: 400px;"><img class="card-img-top" src="https://app.pnu.edu.sa/Registre_files/1.png" alt="PNU"/>
                     <div class="card-body">
                       <br/>
                       <h5 class="h5 mb-0" style="text-align: center;">جامعة الأميرة نورة بنت عبدالرحمن</h5>
