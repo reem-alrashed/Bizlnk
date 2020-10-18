@@ -107,7 +107,7 @@
           
           <!-- Menu-->
               <ul class="navbar-nav">
-                <li ><a class="nav-link dropdown order-lg-1  mx-auto ml-lg-0 pr-lg-2 " href="/projects/home"  style="text-weight:bold;">منصة تَعَاوُن</a></li>
+                <li ><a class="nav-link dropdown order-lg-1  mx-auto ml-lg-0 pr-lg-2 " href="/projects/home"  style="text-weight:bold;font-size:25px; font-family:  Optima;"><b>Bizlnk</b></a></li>
 
                 <li ><a class="nav-link dropdown" href="/projects/search" >أفكار المشاريع</a></li>
               <% if(loggedIn){%>
@@ -125,7 +125,7 @@
                 <%}%>
                 <li><a class="nav-link dropdown" href="/users/<%= currentUser._id %>/profile"> حسابي </a></li>
        
-                <li><a class="nav-link dropdown" href="/users/logout"><%=currentUser.name%> - تسجيل الخروج</a>
+                <li><a class="btn btn-primary ml-grid-gutter d-none d-lg-inline-block" href="/users/logout"><%=currentUser.name%> - تسجيل الخروج</a>
 
 
 

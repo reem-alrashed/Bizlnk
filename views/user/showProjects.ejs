@@ -20,9 +20,8 @@
       <h4 class="card-title"><%= project.title %></h4>
       <p class="card-text"> <%= project.description %> </p>
       <p class="card-text">أنشئ بواسطة:  <%= project.userId.name %> </p>
-      <p class="btn btn-info"> <%= project.budget %> ريال سعودي </p>  
-      <p class="btn btn-info"> <%= project.postedDate %></p> <br/>
-      <a class="btn btn-info" href="/proposals/<%=project._id%>/show">العروض</a>
+      <a class="btn btn-primary ml-grid-gutter d-none d-lg-inline-block"> <%= project.budget %> ريال سعودي </a>  
+      <a class="btn btn-primary ml-grid-gutter d-none d-lg-inline-block" href="/proposals/<%=project._id%>/show">العروض</a>
     </div>
   </div>
   <br/>
