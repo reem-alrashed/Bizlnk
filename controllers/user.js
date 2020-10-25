@@ -156,7 +156,7 @@ login:(req,res,next)=>{
 },
 authenticate: passport.authenticate('local',{
     successRedirect: '/projects/home',
-    successFlash: ' تم تسجيل الدخول بنجاح، مرحباً بك في نظام تعاون',
+    successFlash: ' تم تسجيل الدخول بنجاح، مرحباً بك في نظام Bizlnk',
     failureRedirect: '/users/login',
     failureFlash: 'الرجاء التحقق من بيانات الدخول'
 }),
