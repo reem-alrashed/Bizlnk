@@ -25,7 +25,7 @@ TeamSchema = new Schema({
     members:
         [
             {
-                name:String,
+            name:String,
             Email:String
         }
         ]
@@ -37,7 +37,6 @@ TeamSchema = new Schema({
     }
     
 })
-
 
 TeamSchema.plugin(passportLocalMongoose, {
     usernameField: 'email'

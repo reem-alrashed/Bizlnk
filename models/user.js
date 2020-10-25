@@ -1,6 +1,4 @@
-
 const mongoose = require("mongoose")
-
 const { Schema } = require("mongoose")
 const passportLocalMongoose = require('passport-local-mongoose');
 
@@ -21,10 +19,7 @@ UserSchema = new Schema({
     },
     isInvestor: Boolean,
     isAdmin: Boolean
-    
 })
-
-
 
 UserSchema.plugin(passportLocalMongoose, {
     usernameField: 'email'
