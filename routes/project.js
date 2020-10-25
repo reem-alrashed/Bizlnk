@@ -6,11 +6,9 @@ router.get('/result',ProjectControler.search)
 router.get('/search',ProjectControler.searchForm)
 router.get('/:mid/show',ProjectControler.show)
 router.get('/',ProjectControler.index3,ProjectControler.indexView)
-//router.get('/test',MeetingControler.index,MeetingControler.indexView)
 router.get('/search/:pid',ProjectControler.search)
 router.get('/home',ProjectControler.indexHome)
 router.get('/new',ProjectControler.new)
-
 router.post('/create/:uid',[
     check('title').isLength({min:2}).withMessage(' العنوان يجب ان يكون ثلاثة احرف على الأقل  ')
     .isLength({max:70}).withMessage(' العنوان تجاوز عدد الاحرف المسموح بها   '),
@@ -26,8 +24,7 @@ router.post('/create/:uid',[
 
 
  router.get('/:mid',ProjectControler.show,ProjectControler.showView)
-//  router.get('/:mid/edit',MeetingControler.edit)
-router.get('/:mid/edit',ProjectControler.edit1)
+ router.get('/:mid/edit',ProjectControler.edit1)
 router.put('/:mid/update',ProjectControler.update,ProjectControler.redirectView)
 router.delete('/:mid/delete',ProjectControler.delete,ProjectControler.redirectView)
 module.exports = router;
