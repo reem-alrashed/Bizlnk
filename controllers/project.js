@@ -10,8 +10,7 @@ const Project = require('../models/project');
 
 
 module.exports ={
-    index3:(req,res)=>{
-        console.log("\n\n\n\n\n\n")
+    index:(req,res)=>{
         Project.find().populate({path:'userId',model:User})
         .exec(function(err, projects) 
         {
@@ -35,37 +34,6 @@ module.exports ={
         })
     })
       }
-      ,index4:(req,res)=>{
-      
-        Project.find({_id:req.params.pid}).then(project=>{
-            res.locals.project = project 
-        render('project/search') 
-           })
-        .catch(error => {
-            console.log('Error')
-            next(error)
-        })
-    },
-     
-    index2:(req,res,next)=>{
-        Meeting.findOne({}).populate('themeId').exec(function (err, meeting) {
-            if (err) return handleError(err);
-           
-                console.log('The theme title is %s', meeting.themeId.title)
-                next()
-          });
-    }
-    ,
-    index:(req,res,next)=>{
-        Meeting.find({})
-        .then(meetings =>{
-            res.locals.meetings = meetings;
-            next();
-            }).catch(error =>{
-           console.log('Error fetching meetings. ');
-            next(error)
-        });
-    }
     ,
     indexView:(req,res)=>{
         res.render("project/index")
@@ -95,10 +63,7 @@ module.exports ={
                 },
 
     redirectView:(req,res,next)=>{
-                
-
                 let redirectPath=res.locals.redirect;
-                console.log(redirectPath)
                 if(redirectPath) res.redirect(redirectPath);
                 else next();
               },
@@ -254,7 +219,6 @@ let currentDate= year + "-" + month + "-" + date + " " + hours + ":" + minutes +
                 Project.find({_id:req.params.pid})
                     .then(projects =>{
                         res.locals.projects = projects;
-                        console.log(projects);
                     res.render("project/searchCard")
                 })
                 .catch(error=>{

@@ -21,8 +21,6 @@ module.exports={
         },
        submitProposal:(req,res)=>{
            let userid=req.params.uid.trim();
-           console.log(userid);
-           console.log(req.params.pid);
            let projectid=mongoose.Types.ObjectId(req.params.pid)
       
         const proposal = new Proposal({
@@ -33,7 +31,6 @@ module.exports={
         })
         proposal.save(function (err) {
            if (err){
-               console.log(err);
                req.flash('error','Error adding proposal');
                res.redirect("/projects/search")            
            }

@@ -14,7 +14,6 @@ User.find({})
     next()
 })
 .catch(error => {
-    console.log('Error')
     next(error)
 })
 ,
@@ -87,7 +86,6 @@ new : (req , res ) =>{
                     req.flash('error', 'لم تتم العملية بنجاح')
                 } 
                  else{ 
-                 console.log("Updated User"); 
                  req.flash('success', 'تم حفظ التغييرات بنجاح!')
                  res.locals.redirect='/users'
                  next();
@@ -105,11 +103,9 @@ new : (req , res ) =>{
 delete:(req,res,next)=>{
     User.findByIdAndDelete(req.params.id, function (err, docs) { 
         if (err){ 
-            console.log(err) 
             req.flash('error','فشلت عملية حذف المستخدم');
         } 
         else{ 
-            console.log("Deleted "); 
             req.flash('error','تم حذف المستخدم');
         } 
         res.locals.redirect='/users'
@@ -126,9 +122,7 @@ show: (req,res)=>{
     .catch(error=>{
         console.log('Error fetching users.');
     });
-
 },
-
 loginForm:(req,res)=>{
     res.render('user/signin-image')
 },
@@ -136,13 +130,11 @@ signInForm:(req,res)=>{
     res.render('user/signIn')
 },
 login:(req,res,next)=>{
-
     User.findOne({email:req.body.email, password:req.body.password})
     .then(user => {
         if(user){
             req.flash('success','تم بنجاح تسجيل الدخول')
         req.session.user=user
-        //console.log(req.session.user)
         res.redirect('../users')
         }
         
@@ -163,16 +155,16 @@ authenticate: passport.authenticate('local',{
     validator:(req,res,next)=>{
         
         const error= validationResult(req)
-        if(!error.isEmpty()){
-                      
-             res.json({error:error.array()})
-              
-        }else{next();}
+        if(!error.isEmpty()){      
+             res.json({error:error.array()})  
+        }
+        else{
+            next();
+        }
         
     } , 
     validate: (req, res, next) =>{
         let err = 0;
-        console.log(body);
         body('name').isLength({min:2,max:25}).withMessage('Name must be at least 2 characters')
         body('bio').not().isEmpty();
         body('email').isEmail().trim();
@@ -186,7 +178,6 @@ authenticate: passport.authenticate('local',{
         next();
     },
     restrictAdmin: (req, res, next) =>{
-        console.log('is authenticated?: ' + req.isAuthenticated()); 
         if (req.isAuthenticated() && req.user.isAdmin) {
             next();
         }else{
@@ -195,11 +186,9 @@ authenticate: passport.authenticate('local',{
         }
     },
     showProfile:(req, res) =>{
-           //res.send('show user method');
     User.findOne({_id:req.params.uid})
     .then(user => {
         res.locals.user=user;
-        console.log(user);
         res.render('user/editprofile',user)
      })
     .catch(error=>{
@@ -208,7 +197,6 @@ authenticate: passport.authenticate('local',{
 
     },
     showProjects:(req, res) =>{
-        console.log(req.params.uid);
         Project.find({userId:"5f60d43cb2534f1972c0a951"}).then(projects=>{
             res.locals.projects = projects
             res.render('user/showProjects',projects)
