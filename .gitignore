@@ -1,3 +1,6 @@
 /node_modules
 package.json
 package-lock.json
+.DS_Store
+public/vendor/.DS_Store
+public/vendor/simplebar/.DS_Store
