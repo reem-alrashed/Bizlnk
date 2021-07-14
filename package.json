@@ -1,0 +1,34 @@
+{
+  "name": "Bizlnk",
+  "version": "1.0.0",
+  "description": "The lack of a point of contact between companies and entrepreneurs with freelance programmers and students working on graduation projects to support and adopt their ideas. In addition, students graduate without much experience in the market, knowing that they have worked on full projects.   This problem inspired us to implement this website. It is a platform that connects company owners and entrepreneurs with programmers and pre-graduates - according to certain conditions - to implement projects ideas given by either side.   Website development was done using Node.js for the back-end and Bootstrap for the front-end.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reem-alrashed/Bizlnk.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reem-alrashed/Bizlnk/issues"
+  },
+  "homepage": "https://github.com/reem-alrashed/Bizlnk#readme",
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.17.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.13.2",
+    "passport": "^0.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
