@@ -65,5 +65,5 @@ app.use('/',router);
     next()
 })
 app.listen(appPort,()=>{ 
-      console.log(`Server has started on port ${appPort}`);
+      console.log(`Server has started on port ${appPort}\nPress Ctrl + C to stop`);
 });
