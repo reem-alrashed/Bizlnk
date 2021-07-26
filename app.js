@@ -13,7 +13,7 @@ const appPort = 3001;
 
 app = express(); 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/Taawon',{
+mongoose.connect('mongodb://localhost:27017/Bizlnk',{
     useNewUrlParser:true,
     useUnifiedTopology: true 
 });
