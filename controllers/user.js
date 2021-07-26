@@ -42,10 +42,10 @@ new : (req , res ) =>{
             User.register(newUser, req.body.password, (error, user) =>{
                 if(user){
                     req.flash('success', 'تم حفظ البيانات بنجاح');
-                    res.redirect('/projects/home');
+                    res.redirect('/');
                 }else{
                     req.flash('error', `الرجاء التحقق من البيانات`);
-                    res.redirect('/projects/home');
+                    res.redirect('/');
                 }
             })
         ) }
@@ -147,7 +147,7 @@ login:(req,res,next)=>{
 
 },
 authenticate: passport.authenticate('local',{
-    successRedirect: '/projects/home',
+    successRedirect: '/',
     successFlash: ' تم تسجيل الدخول بنجاح، مرحباً بك في نظام Bizlnk',
     failureRedirect: '/users/login',
     failureFlash: 'الرجاء التحقق من بيانات الدخول'
@@ -174,7 +174,7 @@ authenticate: passport.authenticate('local',{
     logout: (req, res, next) =>{
         req.logout();
         req.flash('success', 'تم تسجيل الخروج بنجاح');
-        res.locals.redirect = '/projects/home';
+        res.locals.redirect = '/';
         next();
     },
     restrictAdmin: (req, res, next) =>{
