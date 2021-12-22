@@ -27,3 +27,10 @@ npm start
 
 
 <img width="509" alt="Screen Shot 2021-07-14 at 8 26 27 PM" src="https://user-images.githubusercontent.com/68843028/125665843-e5016727-b4d9-4134-bf9d-46856adc1169.png">
+  
+  
+  
+## Authors   
+
+[@reem-alrashed](https://github.com/reem-alrashed) and [@Ghaidaalbohairy](https://github.com/ghaidaalbohairy).
+
