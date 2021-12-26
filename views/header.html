@@ -1,4 +1,5 @@
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="utf-8">
     <title> Bizlnk </title>
@@ -12,134 +13,136 @@
     <meta name="theme-color" content="#ffffff">
     <!-- Page loading styles-->
     <style>
-      .cs-page-loading {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        -webkit-transition: all .4s .2s ease-in-out;
-        transition: all .4s .2s ease-in-out;
-        background-color: #fff;
-        opacity: 0;
-        visibility: hidden;
-        z-index: 9999;
-      }
-      .cs-page-loading.active {
-        opacity: 1;
-        visibility: visible;
-      }
-      .cs-page-loading-inner {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        -webkit-transform: translateY(-50%);
-        transform: translateY(-50%);
-        -webkit-transition: opacity .2s ease-in-out;
-        transition: opacity .2s ease-in-out;
-        opacity: 0;
-      }
-      .cs-page-loading.active > .cs-page-loading-inner {
-        opacity: 1;
-      }
-      .cs-page-loading-inner > span {
-        display: block;
-        font-family: 'Inter', sans-serif;
-        font-size: 1rem;
-        font-weight: normal;
-        color: #737491;
-      }
-      .cs-page-spinner {
-        display: inline-block;
-        width: 2.75rem;
-        height: 2.75rem;
-        margin-bottom: .75rem;
-        vertical-align: text-bottom;
-        border: .15em solid #766df4;
-        border-right-color: transparent;
-        border-radius: 50%;
-        -webkit-animation: spinner .75s linear infinite;
-        animation: spinner .75s linear infinite;
-      }
-      @-webkit-keyframes spinner {
-        100% {
-          -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
+        .cs-page-loading {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-transition: all .4s .2s ease-in-out;
+            transition: all .4s .2s ease-in-out;
+            background-color: #fff;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 9999;
         }
-      }
-      @keyframes spinner {
-        100% {
-          -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
+        
+        .cs-page-loading.active {
+            opacity: 1;
+            visibility: visible;
         }
-      }
-      
+        
+        .cs-page-loading-inner {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            -webkit-transition: opacity .2s ease-in-out;
+            transition: opacity .2s ease-in-out;
+            opacity: 0;
+        }
+        
+        .cs-page-loading.active>.cs-page-loading-inner {
+            opacity: 1;
+        }
+        
+        .cs-page-loading-inner>span {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: normal;
+            color: #737491;
+        }
+        
+        .cs-page-spinner {
+            display: inline-block;
+            width: 2.75rem;
+            height: 2.75rem;
+            margin-bottom: .75rem;
+            vertical-align: text-bottom;
+            border: .15em solid #766df4;
+            border-right-color: transparent;
+            border-radius: 50%;
+            -webkit-animation: spinner .75s linear infinite;
+            animation: spinner .75s linear infinite;
+        }
+        
+        @-webkit-keyframes spinner {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes spinner {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
     </style>
     <!-- Page loading scripts-->
     <script>
-      (function () {
-        window.onload = function () {
-          var preloader = document.querySelector('.cs-page-loading');
-          preloader.classList.remove('active');
-          setTimeout(function () {
-            preloader.remove();
-          }, 2000);
-        };
-      })();
-      
+        (function() {
+            window.onload = function() {
+                var preloader = document.querySelector('.cs-page-loading');
+                preloader.classList.remove('active');
+                setTimeout(function() {
+                    preloader.remove();
+                }, 2000);
+            };
+        })();
     </script>
-    <!-- Vendor Styles-->
-    <!-- Main Theme Styles + Bootstrap-->
+
     <base href="/">
-    <link  href="css/theme.min.css">
-  </head>
-  
-      <!-- Navbar (Floating dark)-->
-      <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
-      <header class="cs-header navbar navbar-expand-lg navbar-light navbar-floating navbar-sticky" data-scroll-header>
-        <div class="container px-0 px-l-3">
-         
-          
-          
-          <!-- Menu-->
-              <ul class="navbar-nav">
-                <li ><a class="nav-link dropdown order-lg-1  mx-auto ml-lg-0 pr-lg-2 " href="/"  style="text-decoration: bold;font-size:25px; font-family:  Optima;"><b>Bizlnk</b></a></li>
+    <link href="css/theme.min.css">
+</head>
 
-                <li ><a class="nav-link dropdown" href="/projects/search" >أفكار المشاريع</a></li>
-              <% if(loggedIn){%>
-                
+<header class="cs-header navbar navbar-expand-lg navbar-light navbar-floating navbar-sticky" data-scroll-header>
+    <div class="container px-0 px-l-3">
+        <ul class="navbar-nav">
+            <li><a class="nav-link dropdown order-lg-1  mx-auto ml-lg-0 pr-lg-2 " href="/" style="text-decoration: bold;font-size:25px; font-family:  Optima;"><b>Bizlnk</b></a></li>
+
+            <li><a class="nav-link dropdown" href="/projects/search">أفكار المشاريع</a></li>
+            <% if(loggedIn){%>
+
                 <% if(currentUser.isAdmin){%>
-                  <li>  <a class="nav-link dropdown" href="/users">المستخدمين</a></li>
-                  <li><a class="nav-link dropdown" href="/projects"> المشاريع </a></li>
-                  
-                  <%}%></li>
-                  
-                  <% if(!currentUser.isAdmin){%>
-                    <li>   <a class="nav-link dropdown" href="/projects/new" class="nav-link">إضافة مشروع</a></li> 
-                    <li ><a class="nav-link dropdown" href="/users/<%= currentUser._id %> /projects"  >مشاريعي</a></li>
-                <%}%>
-                <li><a class="nav-link dropdown" href="/users/<%= currentUser._id %>/profile"> حسابي </a></li>
-       
-                <li><a class="btn btn-primary ml-grid-gutter d-none d-lg-inline-block" href="/users/logout"><%=currentUser.name%> - تسجيل الخروج</a>
+                    <li> <a class="nav-link dropdown" href="/users">المستخدمين</a></li>
+                    <li><a class="nav-link dropdown" href="/projects"> المشاريع </a></li>
+
+                    <%}%>
+                        </li>
+
+                        <% if(!currentUser.isAdmin){%>
+                            <li> <a class="nav-link dropdown" href="/projects/new" class="nav-link">إضافة مشروع</a></li>
+                            <li><a class="nav-link dropdown" href="/users/<%= currentUser._id %> /projects">مشاريعي</a></li>
+                            <%}%>
+                                <li><a class="nav-link dropdown" href="/users/<%= currentUser._id %>/profile"> حسابي </a></li>
+
+                                <li>
+                                    <a class="btn btn-primary ml-grid-gutter d-none d-lg-inline-block" href="/users/logout">
+                                        <%=currentUser.name%> - تسجيل الخروج</a>
 
 
 
-                      <%}else{%>
-                        <div class="d-flex align-items-center">
-                          <a class="btn btn-primary ml-grid-gutter d-none d-lg-inline-block" href="/users/login">تسجيل الدخول</a>   
-                            <a class="btn btn-primary ml-grid-gutter d-none d-lg-inline-block" href="/users/signIn">انشاء حساب</a>
-                          </div>
+                                    <%}else{%>
+                                        <div class="d-flex align-items-center">
+                                            <a class="btn btn-primary ml-grid-gutter d-none d-lg-inline-block" href="/users/login">تسجيل الدخول</a>
+                                            <a class="btn btn-primary ml-grid-gutter d-none d-lg-inline-block" href="/users/signIn">انشاء حساب</a>
+                                        </div>
 
-                      <%}%>
-                   
-               
-                </li>
-              </ul>
-          </div>
-        </div>
-      </header>
-      </html>
+                                        <%}%>
+
+
+                                </li>
+        </ul>
+    </div>
+    </div>
+</header>
+
+</html>
